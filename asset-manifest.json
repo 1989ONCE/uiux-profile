@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/uiux-profile/static/css/main.61dd68a8.css",
-    "main.js": "/uiux-profile/static/js/main.14616a05.js",
+    "main.js": "/uiux-profile/static/js/main.2d2567f1.js",
     "static/js/453.09e242cc.chunk.js": "/uiux-profile/static/js/453.09e242cc.chunk.js",
     "static/media/chen.jpg": "/uiux-profile/static/media/chen.c6a64018cd90f81fe31e.jpg",
     "static/media/zheng.png": "/uiux-profile/static/media/zheng.80706b6261524d4cc3ca.png",
@@ -18,7 +18,6 @@
     "static/media/liujob.png": "/uiux-profile/static/media/liujob.9798dfb47b3d154c3573.png",
     "static/media/aiproject.png": "/uiux-profile/static/media/aiproject.d6cd80b982762b0e3a69.png",
     "static/media/i3.png": "/uiux-profile/static/media/i3.bb51777cad2292c19473.png",
-    "static/media/infobg.png": "/uiux-profile/static/media/infobg.9b7e9ee17022fd4e749c.png",
     "static/media/ncuapp.png": "/uiux-profile/static/media/ncuapp.3a92ee22091626a9ab70.png",
     "static/media/i1.png": "/uiux-profile/static/media/i1.0b2f44db7b71b4cda910.png",
     "static/media/i2.png": "/uiux-profile/static/media/i2.4b40566d7331bb2fea0a.png",
@@ -28,11 +27,11 @@
     "static/media/bg.png": "/uiux-profile/static/media/bg.c01e5fdcfac7716d0333.png",
     "index.html": "/uiux-profile/index.html",
     "main.61dd68a8.css.map": "/uiux-profile/static/css/main.61dd68a8.css.map",
-    "main.14616a05.js.map": "/uiux-profile/static/js/main.14616a05.js.map",
+    "main.2d2567f1.js.map": "/uiux-profile/static/js/main.2d2567f1.js.map",
     "453.09e242cc.chunk.js.map": "/uiux-profile/static/js/453.09e242cc.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.61dd68a8.css",
-    "static/js/main.14616a05.js"
+    "static/js/main.2d2567f1.js"
   ]
 }
