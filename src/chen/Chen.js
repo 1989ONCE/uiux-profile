@@ -1,4 +1,4 @@
-import { NativeBaseProvider, Box, HStack, Image, IconButton, Tooltip, Text, AspectRatio} from "native-base";
+import { NativeBaseProvider, Box, VStack, ZStack, HStack, Image, IconButton, Tooltip, Text} from "native-base";
 import '..//App.css';
 import chenImg from './img/chen.jpg';
 import cheninfo from './img/cheninfo.png';
@@ -10,16 +10,17 @@ import Header from "../component/Header";
 import AvatarComponent2 from "../component/avatarComponent2";
 import bg2 from '../Team/bg2.png';
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
+import { GoArrowUpLeft } from "react-icons/go";
 
 
 const Chen = () => {
   const [show, setShow] = useState(false);
   function handleKeyDown(event) {
     if (event.key === 'ArrowDown' || event.key === 'ArrowRight') {
-      window.location.href = '/ncustudio/chen/job';
+      window.location.href = '/uiux-profile/#/chen/job';
     }
     else if(event.key === 'ArrowUp' || event.key === 'ArrowLeft'){
-        window.location.href = '/ncustudio';
+        window.location.href = '/uiux-profile';
     }
   }
   useEffect(() => {
@@ -37,17 +38,23 @@ const Chen = () => {
         
             {/* Header */}
             <Header link={'chen'} page={'about'}/>
+            <ZStack w={'90%'} alignItems={'flex-end'}>
+                <VStack>
+                    {show ? <GoArrowUpLeft size={'2rem'} /> : null}
+                    {show ? <Text fontFamily={"cwTeXKai"}>點擊任一選項，前往該頁面</Text> : null}
+                    </VStack>
+            </ZStack>
             <Image w={'100%'} height={'100%'} source={bg2} alt="bg" position={'fixed'} zIndex={-1}></Image>
             
             <HStack paddingTop={'5rem'} alignItems={'center'} alignContent={'center'} justifyContent={'center'}>
                 <Box paddingLeft={'2rem'}>
-                    <Link to={`/ncustudio`} style={{textDecoration: 'none'}}  >
+                    <Link to={``} style={{textDecoration: 'none'}}  >
                         <IoIosArrowBack size={'40px'} color="#8E9D7D" />
                     </Link>
                 </Box>
                 <AvatarComponent2 img={chenImg} name={'陳佳妤'} info={cheninfo} />
                 <Box paddingRight={'2rem'}>
-                    <Link to={`/ncustudio/chen/job`} style={{textDecoration: 'none'}}  >
+                    <Link to={`/chen/job`} style={{textDecoration: 'none'}}  >
                         <IoIosArrowForward size={'40px'} color="#8E9D7D" />
                     </Link>
                     
@@ -75,7 +82,7 @@ const Chen = () => {
                   />
                 </Tooltip>
                 <Tooltip label="聯絡我們" bg="gray.600:alpha.30" color="gray" placement="top">
-                  <Link to="/ncustudio/contact">
+                  <Link to="/contact">
                   <IconButton borderRadius='10rem' icon={<RiCustomerService2Fill size={'27px'} />}
                   _icon={{
                     color: "#8E9D7D",

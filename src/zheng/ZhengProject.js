@@ -1,7 +1,8 @@
-import { NativeBaseProvider, Box, HStack, Image, IconButton, Tooltip, Text, AspectRatio} from "native-base";
+import { NativeBaseProvider, Box, HStack, VStack, ZStack, Image, IconButton, Tooltip, Text} from "native-base";
 import '..//App.css';
 import { BsInfo } from "react-icons/bs";
 import { RiCustomerService2Fill } from "react-icons/ri";
+import { GoArrowUpLeft } from "react-icons/go";
 import React, { useState, useEffect } from "react";
 import { Link} from "react-router-dom";
 import Header from "../component/Header";
@@ -14,10 +15,10 @@ const ZhengProject = () => {
   const [show, setShow] = useState(false);
   function handleKeyDown(event) {
     if (event.key === 'ArrowDown' || event.key === 'ArrowRight') {
-      window.location.href = '/ncustudio/zheng/interest';
+      window.location.href = '/uiux-profile/#/zheng/interest';
     }
     else if(event.key === 'ArrowUp' || event.key === 'ArrowLeft'){
-        window.location.href = '/ncustudio/zheng/job';
+        window.location.href = '/uiux-profile/#/zheng/job';
     }
   }
   useEffect(() => {
@@ -30,10 +31,16 @@ const ZhengProject = () => {
   }, []); // Empty dependency array means this effect runs once on mount and clean up on unmount
     return (
         <NativeBaseProvider>
-          <Box w={'full'} h={'full'}>
+          <Box w={'full'} h={'full'} >
         
             {/* Header */}
             <Header link={'zheng'} page={'project'}/>
+            <ZStack w={'90%'} alignItems={'flex-end'}>
+                <VStack>
+                    {show ? <GoArrowUpLeft size={'2rem'} /> : null}
+                    {show ? <Text fontFamily={"cwTeXKai"}>點擊任一選項，前往該頁面</Text> : null}
+                    </VStack>
+            </ZStack>
             <Image w={'100%'} height={'100%'} source={bg4} alt="bg" position={'fixed'} zIndex={-1}></Image>
             <Text position={'fixed'} alignSelf={'end'} bottom={10} right={5} fontWeight={600} fontFamily={'cwTeXKai'} fontSize={24}>鄭彩纓</Text>
 
@@ -46,14 +53,14 @@ const ZhengProject = () => {
 
             <HStack alignItems={'center'} alignContent={'center'} justifyContent={'center'}>
                 <Box paddingLeft={'2rem'}>
-                    <Link to={`/ncustudio/zheng/job`} style={{textDecoration: 'none'}}  >
+                    <Link to={`/zheng/job`} style={{textDecoration: 'none'}}  >
                         <IoIosArrowBack size={'40px'} color="#8E9D7D" />
                     </Link>
                 </Box>
 
                 <ProjectComponent3 />
                 <Box paddingRight={'2rem'}>
-                    <Link to={`/ncustudio/zheng/interest`} style={{textDecoration: 'none'}}  >
+                    <Link to={`/zheng/interest`} style={{textDecoration: 'none'}}  >
                         <IoIosArrowForward size={'40px'} color="#8E9D7D" />
                     </Link>                   
                 </Box>
@@ -80,7 +87,7 @@ const ZhengProject = () => {
                   />
                 </Tooltip>
                 <Tooltip label="聯絡我們" bg="gray.600:alpha.30" color="gray" placement="top">
-                  <Link to="/ncustudio/contact">
+                  <Link to="/contact">
                   <IconButton borderRadius='10rem' icon={<RiCustomerService2Fill size={'27px'} />}
                   _icon={{
                     color: "#8E9D7D",

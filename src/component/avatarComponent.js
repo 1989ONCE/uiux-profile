@@ -9,7 +9,7 @@ function AvatarComponent(props) {
         <Box flexDirection={'row'} alignItems={'center'}>
             <Pressable alignItems={"center"} paddingX={10} paddingTop={'20px'} >
                 <Box flexDirection={'row'} alignItems={'flex-end'}>
-                    <Link to={`/ncustudio/${props.link}`}><Pressable>
+                    <Link to={`/${props.link}`}><Pressable>
                         {({ isHovered }) => {
                             return (<Avatar style={{transform: [{scale:isHovered ? 1.1 : 1}]}} size={'275px'} 
                             source={{

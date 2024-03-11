@@ -1,9 +1,6 @@
-import { Box, Avatar, VStack, Text, HStack, Pressable, Image, Center, AspectRatio, ZStack} from "native-base";
+import { Avatar, VStack, Text, HStack, Image, Center, AspectRatio } from "native-base";
 import '../App.css';
-import { GoArrowUpLeft } from "react-icons/go";
 import React from "react";
-import infobg from '../Team/infobg.png';
-import { View } from 'react-native';
 
 
 function AvatarComponent2(props) {

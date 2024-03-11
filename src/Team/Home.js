@@ -11,7 +11,7 @@ const Home = () => {
   const [show, setShow] = useState(false);
   function handleKeyDown(event) {
     if(event.key === 'ArrowDown' || event.key === 'ArrowRight'){
-        window.location.href = '/ncustudio/chen';
+        window.location.href = '/uiux-profile/#/chen';
     }
   }
   useEffect(() => {
@@ -25,7 +25,7 @@ const Home = () => {
     
     return (
         <NativeBaseProvider>
-          <Box w={'full'} h={'full'}>
+          <Box w={'full'} h={'full'} >
           {/* 'Background */}
             <Image w={'100%'} height={'100%'} source={bg} alt="bg" position={'fixed'} zIndex={-1}></Image>
                     
@@ -52,7 +52,7 @@ const Home = () => {
                   />
                 </Tooltip>
                 <Tooltip label="聯絡我們" bg="gray.600:alpha.30" color="gray" placement="top">
-                  <Link to="/ncustudio/contact">
+                  <Link to="/contact">
                   <IconButton borderRadius='10rem' icon={<RiCustomerService2Fill size={'27px'} />}
                   _icon={{
                     color: "#8E9D7D",

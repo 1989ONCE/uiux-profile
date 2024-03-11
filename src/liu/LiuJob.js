@@ -1,9 +1,10 @@
-import { NativeBaseProvider, Box, HStack, Image, IconButton, Tooltip, Text, AspectRatio} from "native-base";
+import { NativeBaseProvider, Box, HStack, VStack, ZStack, Image, IconButton, Tooltip, Text} from "native-base";
 import '..//App.css';
 import liuImg from './img/liu.png';
 import liujob from './img/liujob.png';
 import { BsInfo } from "react-icons/bs";
 import { RiCustomerService2Fill } from "react-icons/ri";
+import { GoArrowUpLeft } from "react-icons/go";
 import React, { useState, useEffect } from "react";
 import { Link} from "react-router-dom";
 import Header from "../component/Header";
@@ -16,10 +17,10 @@ const LiuJob = () => {
   const [show, setShow] = useState(false);
   function handleKeyDown(event) {
     if (event.key === 'ArrowDown' || event.key === 'ArrowRight') {
-      window.location.href = '/ncustudio/liu/project';
+      window.location.href = '/uiux-profile/#/liu/project';
     }
     else if(event.key === 'ArrowUp' || event.key === 'ArrowLeft'){
-        window.location.href = '/ncustudio/liu';
+        window.location.href = '/uiux-profile/#/liu';
     }
   }
   useEffect(() => {
@@ -33,21 +34,27 @@ const LiuJob = () => {
   
     return (
         <NativeBaseProvider>
-          <Box w={'full'} h={'full'}>
+          <Box w={'full'} h={'full'} >
         
             {/* Header */}
             <Header link={'liu'} page={'job'}/>
+            <ZStack w={'90%'} alignItems={'flex-end'}>
+                <VStack>
+                    {show ? <GoArrowUpLeft size={'2rem'} /> : null}
+                    {show ? <Text fontFamily={"cwTeXKai"}>點擊任一選項，前往該頁面</Text> : null}
+                    </VStack>
+            </ZStack>
             <Image w={'100%'} height={'100%'} source={bg3} alt="bg" position={'fixed'} zIndex={-1}></Image>
             
             <HStack paddingTop={'5rem'} alignItems={'center'} alignContent={'center'} justifyContent={'center'}>
                 <Box paddingLeft={'2rem'}>
-                    <Link to={`/ncustudio/liu`} style={{textDecoration: 'none'}}  >
+                    <Link to={`/liu`} style={{textDecoration: 'none'}}  >
                         <IoIosArrowBack size={'40px'} color="#8E9D7D" />
                     </Link>
                 </Box>
                 <AvatarComponent2 img={liuImg} name={'劉泓毅'} info={liujob} />
                 <Box paddingRight={'2rem'}>
-                    <Link to={`/ncustudio/liu/project`} style={{textDecoration: 'none'}}  >
+                    <Link to={`/liu/project`} style={{textDecoration: 'none'}}  >
                         <IoIosArrowForward size={'40px'} color="#8E9D7D" />
                     </Link>
                     
@@ -75,7 +82,7 @@ const LiuJob = () => {
                   />
                 </Tooltip>
                 <Tooltip label="聯絡我們" bg="gray.600:alpha.30" color="gray" placement="top">
-                  <Link to="/ncustudio/contact">
+                  <Link to="/contact">
                   <IconButton borderRadius='10rem' icon={<RiCustomerService2Fill size={'27px'} />}
                   _icon={{
                     color: "#8E9D7D",

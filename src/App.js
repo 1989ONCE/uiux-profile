@@ -15,7 +15,6 @@ import ZhengProject from './zheng/ZhengProject';
 import ZhengInterest from './zheng/ZhengInterest';
 import React from "react";
 import {
-  BrowserRouter as Router,
   Routes,
   Route,
 } from "react-router-dom";
@@ -23,80 +22,75 @@ import {
 function App() {
   return (
     <>
-    <Router>
       <Routes>
         <Route
-          exact
-          path="/ncustudio"
+          path="/"
           element={<Home />}
         />
         <Route
-          exact
-          path="/ncustudio/contact"
+          path="/contact"
           element={<Contact />}
         />
         <Route
-          exact
-          path="/ncustudio/chen"
+          path="/chen"
           element={<Chen />}
         />
         <Route
-          exact
-          path="/ncustudio/chen/job"
+          
+          path="/chen/job"
           element={<ChenJob />}
         />
         <Route
-          exact
-          path="/ncustudio/chen/project"
+          
+          path="/chen/project"
           element={<ChenProject />}
         />
         <Route
-          exact
-          path="/ncustudio/chen/interest"
+          
+          path="/chen/interest"
           element={<ChenInterest />}
         />
         <Route
-          exact
-          path="/ncustudio/liu"
+          
+          path="/liu"
           element={<Liu />}
         />
         <Route
-          exact
-          path="/ncustudio/liu/job"
+          
+          path="/liu/job"
           element={<LiuJob />}
         />
         <Route
-          exact
-          path="/ncustudio/liu/project"
+          
+          path="/liu/project"
           element={<LiuProject />}
         />
         <Route
-          exact
-          path="/ncustudio/liu/interest"
+          
+          path="/liu/interest"
           element={<LiuInterest />}
         />
         <Route
-          exact
-          path="/ncustudio/zheng"
+          
+          path="/zheng"
           element={<Zheng />}
         />
         <Route
-          exact
-          path="/ncustudio/zheng/job"
+          
+          path="/zheng/job"
           element={<ZhengJob />}
         />
         <Route
-          exact
-          path="/ncustudio/zheng/project"
+          
+          path="/zheng/project"
           element={<ZhengProject />}
         />
         <Route
-          exact
-          path="/ncustudio/zheng/interest"
+          
+          path="/zheng/interest"
           element={<ZhengInterest />}
         />
       </Routes>
-    </Router>
     </>
   );
 }
