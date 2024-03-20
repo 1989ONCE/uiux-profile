@@ -13,7 +13,7 @@ import "..//App.css";
 import { BsInfo } from "react-icons/bs";
 import { GoArrowUpLeft } from "react-icons/go";
 import { RiCustomerService2Fill } from "react-icons/ri";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Header from "../component/Header";
 import ProjectComponent2 from "./projectComponent2";

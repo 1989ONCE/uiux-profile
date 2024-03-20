@@ -14,7 +14,7 @@ import chenImg from "./img/chen.jpg";
 import cheninfo from "./img/cheninfo.png";
 import { BsInfo } from "react-icons/bs";
 import { RiCustomerService2Fill } from "react-icons/ri";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Header from "../component/Header";
 import AvatarComponent2 from "../component/avatarComponent2";
