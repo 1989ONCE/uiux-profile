@@ -13,7 +13,7 @@ import Zheng from "./zheng/Zheng";
 import ZhengJob from "./zheng/ZhengJob";
 import ZhengProject from "./zheng/ZhengProject";
 import ZhengInterest from "./zheng/ZhengInterest";
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 
 function App() {
@@ -43,12 +43,12 @@ function App() {
   ];
   function nextPage() {
     if (
-      pageIdx == route[personIdx].subPage.length - 1 &&
-      personIdx == route.length - 1
+      pageIdx === route[personIdx].subPage.length - 1 &&
+      personIdx === route.length - 1
     ) {
       return;
     }
-    if (pageIdx == route[personIdx].subPage.length - 1) {
+    if (pageIdx === route[personIdx].subPage.length - 1) {
       console.log(personIdx);
       console.log(personIdx + 1);
       personIdx = personIdx + 1;
@@ -60,10 +60,10 @@ function App() {
     window.location.href = `/uiux-profile/#/${route[personIdx].path}/${route[personIdx].subPage[pageIdx]}`;
   }
   function prevPage() {
-    if (pageIdx == 0 && personIdx == 0) {
+    if (pageIdx === 0 && personIdx === 0) {
       return;
     }
-    if (pageIdx == 0) {
+    if (pageIdx === 0) {
       personIdx = personIdx - 1;
       pageIdx = route[personIdx].subPage.length - 1;
     } else {
@@ -102,7 +102,7 @@ function App() {
       window.removeEventListener("keydown", handleKeyDown);
       window.removeEventListener("keyup", handleKeyUp);
     };
-  }, []);
+  });
   return (
     <>
       <Routes>
