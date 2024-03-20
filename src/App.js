@@ -15,11 +15,9 @@ import ZhengProject from "./zheng/ZhengProject";
 import ZhengInterest from "./zheng/ZhengInterest";
 import React, { useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
+import NoMatch from "./Team/NoMatch";
 
 function App() {
-  // const [ctrlDown, setCtrlDown] = useState(false);
-  // const [personIdx, setPersonIdx] = useState(0);
-  // const [pageIdx, setPageIdx] = useState(0);
   let ctrlDown = false;
   let personIdx = 0;
   let pageIdx = 0;
@@ -120,6 +118,7 @@ function App() {
         <Route path="/zheng/job" element={<ZhengJob />} />
         <Route path="/zheng/project" element={<ZhengProject />} />
         <Route path="/zheng/interest" element={<ZhengInterest />} />
+        <Route path="*" element={<NoMatch />} />
       </Routes>
     </>
   );
