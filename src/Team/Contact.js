@@ -28,16 +28,21 @@ import { CloseIcon } from "native-base";
 import Header from "../component/Header2";
 import { GoArrowUpLeft } from "react-icons/go";
 import Swal from "sweetalert2";
+import Footer from "../component/footer";
 
 const Contact = () => {
   const defaultForm = { name: "", email: "", content: "" };
   const [show, setShow] = useState(false);
-  const [show2, setShow2] = useState(false);
   const [formData, setData] = useState(defaultForm);
   const [errors, setErrors] = useState({});
   const [isOpen, setIsOpen] = useState(false);
   const onClose = () => setIsOpen(false);
   const cancelRef = useRef(null);
+
+  const [show2, setShow2] = useState();
+  function handleDataFromChild(show2) {
+    setShow2(show2);
+  }
 
   function validate() {
     if (formData.name === undefined) {
@@ -301,68 +306,8 @@ const Contact = () => {
           </VStack>
         </ZStack>
         {/* Footer */}
-        <Box
-          className="footer"
-          height={"20px"}
-          paddingX={2}
-          position={"fixed"}
-          bottom={6}
-        >
-          <HStack>
-            <Tooltip
-              label="使用教學"
-              bg="gray.600:alpha.30"
-              color="gray"
-              placement="top"
-            >
-              <IconButton
-                borderRadius="10rem"
-                icon={<BsInfo size={"27px"} />}
-                _icon={{
-                  color: "#8E9D7D",
-                  size: "md",
-                }}
-                _hover={{
-                  bg: "cyan.600:alpha.30",
-                }}
-                _pressed={{
-                  bg: "cyan.600:alpha.20",
-                }}
-                onPress={() => {
-                  setShow2(!show2);
-                }}
-              />
-            </Tooltip>
-            <Tooltip
-              label="聯絡我們"
-              bg="gray.600:alpha.30"
-              color="gray"
-              placement="top"
-            >
-              <IconButton
-                borderRadius="10rem"
-                icon={<RiCustomerService2Fill size={"27px"} />}
-                _icon={{
-                  name: "MdOutlineHeadsetMic",
-                  color: "#8E9D7D",
-                  size: "md",
-                  borderColor: "#8E9D7D",
-                  borderWidth: "3px",
-                  borderStyle: "solid",
-                }}
-                _hover={{
-                  bg: "cyan.600:alpha.30",
-                }}
-                _pressed={{
-                  bg: "cyan.600:alpha.20",
-                }}
-                onPress={() => {
-                  <Link to="/contact">Contact Us</Link>;
-                }}
-              />
-            </Tooltip>
-          </HStack>
-        </Box>
+        <Footer sendShow={handleDataFromChild} rate={''}/>
+
       </Box>
     </NativeBaseProvider>
   );

@@ -5,15 +5,11 @@ import {
   ZStack,
   VStack,
   Image,
-  IconButton,
-  Tooltip,
   Text,
 } from "native-base";
 import "..//App.css";
 import zhengImg from "./img/zheng.png";
 import zhengJob from "./img/zhengjob.png";
-import { BsInfo } from "react-icons/bs";
-import { RiCustomerService2Fill } from "react-icons/ri";
 import { GoArrowUpLeft } from "react-icons/go";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
@@ -21,9 +17,13 @@ import Header from "../component/Header";
 import AvatarComponent2 from "../component/avatarComponent2";
 import bg3 from "../Team/bg3.png";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
+import Footer from "../component/footer";
 
 const ZhengJob = () => {
-  const [show, setShow] = useState(false);
+  const [parentShow, setParentShow] = useState();
+  function handleDataFromChild(show) {
+      setParentShow(show);
+  }
   return (
     <NativeBaseProvider>
       <Box w={"full"} h={"full"}>
@@ -31,8 +31,8 @@ const ZhengJob = () => {
         <Header link={"zheng"} page={"job"} />
         <ZStack w={"90%"} alignItems={"flex-end"}>
           <VStack>
-            {show ? <GoArrowUpLeft size={"2rem"} /> : null}
-            {show ? (
+            {parentShow ? <GoArrowUpLeft size={"2rem"} /> : null}
+            {parentShow ? (
               <Text fontFamily={"cwTeXKai"}>點擊任一選項，前往該頁面</Text>
             ) : null}
           </VStack>
@@ -66,66 +66,8 @@ const ZhengJob = () => {
         </HStack>
 
         {/* Footer */}
-        <Box
-          className="footer"
-          height={"20px"}
-          paddingX={2}
-          position={"fixed"}
-          bottom={6}
-        >
-          <HStack>
-            <Tooltip
-              label="使用教學"
-              bg="gray.600:alpha.30"
-              color="gray"
-              placement="top"
-            >
-              <IconButton
-                borderRadius="10rem"
-                icon={<BsInfo size={"27px"} />}
-                _icon={{
-                  color: "#8E9D7D",
-                  size: "md",
-                }}
-                _hover={{
-                  bg: "cyan.600:alpha.30",
-                }}
-                _pressed={{
-                  bg: "cyan.600:alpha.20",
-                }}
-                onPress={() => {
-                  setShow(!show);
-                }}
-              />
-            </Tooltip>
-            <Tooltip
-              label="聯絡我們"
-              bg="gray.600:alpha.30"
-              color="gray"
-              placement="top"
-            >
-              <Link to="/contact">
-                <IconButton
-                  borderRadius="10rem"
-                  icon={<RiCustomerService2Fill size={"27px"} />}
-                  _icon={{
-                    color: "#8E9D7D",
-                    size: "md",
-                    borderColor: "#8E9D7D",
-                    borderWidth: "3px",
-                    borderStyle: "solid",
-                  }}
-                  _hover={{
-                    bg: "cyan.600:alpha.30",
-                  }}
-                  _pressed={{
-                    bg: "cyan.600:alpha.20",
-                  }}
-                />
-              </Link>
-            </Tooltip>
-          </HStack>
-        </Box>
+        <Footer sendShow={handleDataFromChild} rate={'86.71%'}/>
+
       </Box>
     </NativeBaseProvider>
   );
