@@ -1,4 +1,4 @@
-import { Box, Avatar, VStack, Text, HStack, Pressable, Image, Center, AspectRatio, ZStack} from "native-base";
+import { VStack, Text, HStack, Image, Center, AspectRatio} from "native-base";
 import '../App.css';
 import React from "react";
 import ncuapp from "./img/ncuapp.png";

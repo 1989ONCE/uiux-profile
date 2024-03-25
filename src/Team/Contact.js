@@ -20,7 +20,6 @@ import "..//App.css";
 import bg from "./bg.png";
 import { RiCustomerService2Fill } from "react-icons/ri";
 import React, { useState, useRef } from "react";
-import { Link } from "react-router-dom";
 import { BiErrorCircle } from "react-icons/bi";
 import { CloseIcon } from "native-base";
 import Header from "../component/Header2";

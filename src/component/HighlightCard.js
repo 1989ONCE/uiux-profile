@@ -1,4 +1,4 @@
-import { Box, Avatar, VStack, ZStack, Text, HStack, Image, Center, AspectRatio } from "native-base";
+import { Box, VStack, Text, Image, AspectRatio } from "native-base";
 import '../App.css';
 import React from "react";
 import HighlightImg from "../Team/highlightCard.png";

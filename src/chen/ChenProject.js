@@ -9,7 +9,7 @@ import {
 } from "native-base";
 import "..//App.css";
 import { GoArrowUpLeft } from "react-icons/go";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Header from "../component/Header";
 import ProjectComponent from "./projectComponent";
