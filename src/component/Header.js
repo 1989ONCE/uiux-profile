@@ -15,6 +15,12 @@ function Header(props) {
                         </Text>
                     </Link>
                     <Text color={'#8E9D7D'} fontSize={{ 'sm' : '0.8rem', 'md': '1.3rem'}}>|</Text>
+                    <Link to={`/${props.link}/highlight`} style={{textDecoration: props.page === 'highlight' ? 'underline' : 'none',  textDecorationColor: props.page === 'highlight' ? 'black' : 'transparent'}}>
+                        <Text color={props.page==='highlight' ? 'black' : '#8E9D7D'} fontWeight={props.page === 'highlight' ? 600 : 300} fontSize={{ 'sm' : '1rem', 'md': '1.5rem'}} fontFamily={'CormorantGaramond'}>
+                            Highlights
+                        </Text>
+                    </Link>
+                    <Text color={'#8E9D7D'} fontSize={{ 'sm' : '0.8rem', 'md': '1.3rem'}}>|</Text>
                     <Link to={`/${props.link}/job`} style={{textDecoration: props.page === 'job' ? 'underline' : 'none',  textDecorationColor: props.page === 'job' ? 'black' : 'transparent'}}>
                         <Text color={props.page==='job' ? 'black' : '#8E9D7D'} fontWeight={props.page === 'job' ? 600 : 300} fontSize={{ 'sm' : '1rem', 'md': '1.5rem'}} fontFamily={'CormorantGaramond'}>
                             Job Experience

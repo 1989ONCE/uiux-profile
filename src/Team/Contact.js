@@ -11,7 +11,6 @@ import {
   HStack,
   Image,
   IconButton,
-  Tooltip,
   FormControl,
   Input,
   VStack,
@@ -19,7 +18,6 @@ import {
 } from "native-base";
 import "..//App.css";
 import bg from "./bg.png";
-import { BsInfo } from "react-icons/bs";
 import { RiCustomerService2Fill } from "react-icons/ri";
 import React, { useState, useRef } from "react";
 import { Link } from "react-router-dom";

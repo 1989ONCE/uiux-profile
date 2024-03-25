@@ -14,7 +14,7 @@ import { Link } from "react-router-dom";
 import Header from "../component/Header";
 import InterestComponent from "../component/interestComponent";
 import bg4 from "../Team/bg4.png";
-import { IoIosArrowBack } from "react-icons/io";
+import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import i1 from "./img/i1.png";
 import i2 from "./img/i2.png";
 import i3 from "./img/i3.png";
@@ -29,7 +29,7 @@ const ZhengInterest = () => {
     <NativeBaseProvider>
       <Box w={"full"} h={"full"}>
         {/* Header */}
-        <Header link={"liu"} page={"interest"} />
+        <Header link={"zheng"} page={"interest"} />
         <ZStack w={"90%"} alignItems={"flex-end"}>
           <VStack>
             {parentShow ? <GoArrowUpLeft size={"2rem"} /> : null}
@@ -65,16 +65,22 @@ const ZhengInterest = () => {
           justifyContent={"center"}
         >
           <Box paddingLeft={"2rem"}>
-            <Link to={`/liu/project`} style={{ textDecoration: "none" }}>
+            <Link to={`/zheng/project`} style={{ textDecoration: "none" }}>
               <IoIosArrowBack size={"40px"} color="#8E9D7D" />
             </Link>
           </Box>
 
-          <HStack w={"80%"} justifyContent={"center"}>
+          <HStack w={"80%"} h={'455px'} justifyContent={"center"}>
             <InterestComponent img={i1} title={"電影"} />
             <InterestComponent img={i2} title={"音樂"} />
             <InterestComponent img={i3} title={"旅遊"} />
           </HStack>
+
+          <Box paddingRight={"2rem"}>
+            <Box>
+              <IoIosArrowForward size={"40px"} color="#F8EDE6" />
+            </Box>
+          </Box>
         </HStack>
 
         {/* Footer */}

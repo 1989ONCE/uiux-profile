@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 function ProjectComponent3() {
 
     return (
-        <Center w={'80%'} h={'500px'} alignItems={'flex-start'}>
+        <Center w={'80%'} h={'493px'} alignItems={'flex-start'}>
             <Box flexDirection={'row'} w={'full'} h={'full'} space={30} flexWrap={'wrap'} >
                     <VStack space={5} w={{sm: 'full', lg: '50%'}} h={'full'} alignContent={'center'} alignItems={'center'} justifyContent={'center'} justifyItems={'center'}> 
                         <Box w={'full'} h={'45%'} alignSelf={'flex-start'} alignItems={'center'}>

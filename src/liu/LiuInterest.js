@@ -69,7 +69,7 @@ const LiuInterest = () => {
             </Link>
           </Box>
 
-          <HStack w={"80%"} justifyContent={"center"}>
+          <HStack w={"80%"} justifyContent={"center"} h={'455px'}>
             <InterestComponent img={i1} title={"音樂"} />
             <InterestComponent img={i2} title={"美食"} />
           </HStack>

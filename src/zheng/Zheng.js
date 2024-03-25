@@ -5,12 +5,9 @@ import {
   VStack,
   HStack,
   Image,
-
   Text,
 } from "native-base";
 import "..//App.css";
-import zhengImg from "./img/zheng.png";
-import zhenginfo from "./img/zhenginfo.png";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Header from "../component/Header";
@@ -19,12 +16,14 @@ import bg2 from "../Team/bg2.png";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import { GoArrowUpLeft } from "react-icons/go";
 import Footer from "../component/footer";
+import data from "../Team/TeamData";
 
 const Zheng = () => {
   const [parentShow, setParentShow] = useState();
   function handleDataFromChild(show) {
       setParentShow(show);
   }
+  const member = data.member[2];
   return (
     <NativeBaseProvider>
       <Box w={"full"} h={"full"}>
@@ -58,9 +57,9 @@ const Zheng = () => {
               <IoIosArrowBack size={"40px"} color="#8E9D7D" />
             </Link>
           </Box>
-          <AvatarComponent2 img={zhengImg} name={"鄭彩纓"} info={zhenginfo} />
-          <Box paddingLeft={"2rem"}>
-            <Link to={`/zheng/job`} style={{ textDecoration: "none" }}>
+          <AvatarComponent2 img={member.img} name={member.name} page={'about'} memberData={member.about} />
+          <Box paddingRight={"2rem"}>
+            <Link to={`/zheng/highlight`} style={{ textDecoration: "none" }}>
               <IoIosArrowForward size={"40px"} color="#8E9D7D" />
             </Link>
           </Box>

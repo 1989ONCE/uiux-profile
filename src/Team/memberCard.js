@@ -1,12 +1,13 @@
 import {Box, Text} from "native-base";
 import '..//App.css';
-import chenImg from '../chen/img/chen.jpg';
-import liuImg from '../liu/img/liu.png';
-import zhengImg from '../zheng/img/zheng.png';
 import AvatarComponent from "../component/avatarComponent";
+import data from "./TeamData";
 
 function MemberCard(props) {
-    return (
+  const member1 = data.member[0];
+  const member2 = data.member[1];
+  const member3 = data.member[2];
+  return (
         <Box w={'100%'} h={'100%'} alignItems={'center'} justifyContent={'center'} justifyItems={'center'}>
           <Text paddingTop={'5rem'} fontFamily={"cwTeXKai"} color={'#8E9D7D'} fontWeight={600} fontSize={{
               sm: "1.5rem",
@@ -16,9 +17,9 @@ function MemberCard(props) {
             使用者介面設計與評鑑 第二組
           </Text>
           <Box paddingTop={'2rem'} flexDirection={'row'} flexWrap={'wrap'} justifyContent={'center'}>
-            <AvatarComponent show={props.show} img={chenImg} name="陳佳妤" link="chen"></AvatarComponent>
-            <AvatarComponent show={false} img={liuImg} name="劉泓毅" link="liu"></AvatarComponent>
-            <AvatarComponent show={false} img={zhengImg} name="鄭彩纓" link="zheng"></AvatarComponent>
+            <AvatarComponent show={props.show} img={member1.img} name={member1.name} link="chen"></AvatarComponent>
+            <AvatarComponent show={false} img={member2.img} name={member2.name} link="liu"></AvatarComponent>
+            <AvatarComponent show={false} img={member3.img} name={member3.name} link="zheng"></AvatarComponent>
           </Box>
         </Box>
     );

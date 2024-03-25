@@ -8,8 +8,6 @@ import {
   Text,
 } from "native-base";
 import "..//App.css";
-import chenImg from "./img/chen.jpg";
-import chenjob from "./img/chenjob.png";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Header from "../component/Header";
@@ -18,12 +16,14 @@ import bg3 from "../Team/bg3.png";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import { GoArrowUpLeft } from "react-icons/go";
 import Footer from "../component/footer";
+import data from "../Team/TeamData";
 
 const ChenJob = () => {
   const [parentShow, setParentShow] = useState();
   function handleDataFromChild(show) {
     setParentShow(show);
   }
+  const member = data.member[0];
   return (
     <NativeBaseProvider>
       <Box w={"full"} h={"full"}>
@@ -57,7 +57,7 @@ const ChenJob = () => {
               <IoIosArrowBack size={"40px"} color="#8E9D7D" />
             </Link>
           </Box>
-          <AvatarComponent2 img={chenImg} name={"陳佳妤"} info={chenjob} />
+          <AvatarComponent2 img={member.img} name={member.name} page={'job'} memberData={member.job} />
           <Box paddingRight={"2rem"}>
             <Link to={`/chen/project`} style={{ textDecoration: "none" }}>
               <IoIosArrowForward size={"40px"} color="#8E9D7D" />
