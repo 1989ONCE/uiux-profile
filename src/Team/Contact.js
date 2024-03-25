@@ -15,7 +15,7 @@ import {
 import "..//App.css";
 import bg from "./bg.png";
 import { RiCustomerService2Fill } from "react-icons/ri";
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { BiErrorCircle } from "react-icons/bi";
 import Header from "../component/Header2";
 import { GoArrowUpLeft } from "react-icons/go";
@@ -114,45 +114,16 @@ const Contact = () => {
     setShow2(show2);
   }
 
-  if(window.location.reload){
-    <AlertDialog
-              leastDestructiveRef={cancelRef}
-              isOpen={isOpen}
-              onClose={onClose}
-            >
-              <AlertDialog.Content>
-                <AlertDialog.CloseButton />
-                <AlertDialog.Header _text={{ fontFamily: "cwTeXKai" }}>
-                  確定送出嗎？ Are you sure?
-                </AlertDialog.Header>
-                <AlertDialog.Body _text={{ fontFamily: "cwTeXKai" }}>
-                  請在送出前確認您的資訊是否正確。送出後將無法修改。 (Make sure
-                  you check your information before submitting. After
-                  submitting, you won't be able to edit it.)
-                </AlertDialog.Body>
-                <AlertDialog.Footer>
-                  <Button.Group space={2}>
-                    <Button
-                      colorScheme="danger"
-                      onPress={onClose}
-                      ref={cancelRef}
-                    >
-                      Cancel
-                    </Button>
-                    <Button
-                      colorScheme="success"
-                      onPress={() => {
-                        onClose();
-                        onSubmit();
-                      }}
-                    >
-                      Submit
-                    </Button>
-                  </Button.Group>
-                </AlertDialog.Footer>
-              </AlertDialog.Content>
-            </AlertDialog>
-  }
+  useEffect(() => {
+    const unloadCallback = (event) => {
+      event.preventDefault();
+      event.returnValue = "";
+      return "";
+    };
+  
+    window.addEventListener("beforeunload", unloadCallback);
+    return () => window.removeEventListener("beforeunload", unloadCallback);
+  }, []);
 
   return (
     <NativeBaseProvider>
