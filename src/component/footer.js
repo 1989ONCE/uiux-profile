@@ -24,12 +24,13 @@ function Footer(props) {
         >
           
           <HStack>
-            <Tooltip
+            <div className="third-step"><Tooltip
               label="使用教學"
               bg="gray.600:alpha.30"
               color="gray"
               placement="top"
             >
+              
               <IconButton
                 borderRadius="10rem"
                 icon={<BsInfo size={"27px"} />}
@@ -48,8 +49,8 @@ function Footer(props) {
                     handleClick();
                 }}
               />
-            </Tooltip>
-            <Tooltip
+            </Tooltip></div>
+            <div className="fourth-step"><Tooltip
               label="聯絡我們"
               bg="gray.600:alpha.30"
               color="gray"
@@ -74,7 +75,7 @@ function Footer(props) {
                   }}
                 />
               </Link>
-            </Tooltip>
+            </Tooltip></div>
             {props.rate ? <Progress rate={props.rate}/> : null }
           </HStack>
         </Box>

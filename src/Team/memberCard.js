@@ -7,6 +7,7 @@ function MemberCard(props) {
   const member1 = data.member[0];
   const member2 = data.member[1];
   const member3 = data.member[2];
+  
   return (
         <Box w={'100%'} h={'100%'} alignItems={'center'} justifyContent={'center'} justifyItems={'center'}>
           <Text paddingTop={'5rem'} fontFamily={"cwTeXKai"} color={'#8E9D7D'} fontWeight={600} fontSize={{
@@ -14,7 +15,7 @@ function MemberCard(props) {
               md: "2rem",
               lg: "3rem"
             }}>
-            使用者介面設計與評鑑 第二組
+            <div className="first-step">使用者介面設計與評鑑 第二組</div>
           </Text>
           <Box paddingTop={'2rem'} flexDirection={'row'} flexWrap={'wrap'} justifyContent={'center'}>
             <AvatarComponent show={props.show} img={member1.img} name={member1.name} link="chen"></AvatarComponent>

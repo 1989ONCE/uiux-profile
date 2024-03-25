@@ -10,12 +10,17 @@ import { RiCustomerService2Fill } from "react-icons/ri";
 import React, { useState } from "react";
 import MemberCard from "./memberCard";
 import Footer from "../component/footer";
+import { useTour } from '@reactour/tour'
 
 const Home = () => {
   const [parentShow, setParentShow] = useState();
   function handleDataFromChild(show) {
     setParentShow(show);
   }
+  const { setIsOpen } = useTour();
+  useState(() => {
+    setIsOpen(true);
+  }, []);
 
   return (
     <NativeBaseProvider>
