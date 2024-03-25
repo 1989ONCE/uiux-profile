@@ -1,16 +1,12 @@
 import {
   NativeBaseProvider,
   AlertDialog,
-  Collapse,
   Text,
   ZStack,
-  Alert,
   Center,
   Box,
   Button,
-  HStack,
   Image,
-  IconButton,
   FormControl,
   Input,
   VStack,
@@ -21,49 +17,141 @@ import bg from "./bg.png";
 import { RiCustomerService2Fill } from "react-icons/ri";
 import React, { useState, useRef } from "react";
 import { BiErrorCircle } from "react-icons/bi";
-import { CloseIcon } from "native-base";
 import Header from "../component/Header2";
 import { GoArrowUpLeft } from "react-icons/go";
 import Swal from "sweetalert2";
 import Footer from "../component/footer";
+import ErrorCollapse from "./ErrorCollapse";
 
 const Contact = () => {
+  //form data
   const defaultForm = { name: "", email: "", content: "" };
-  const [show, setShow] = useState(false);
   const [formData, setData] = useState(defaultForm);
-  const [errors, setErrors] = useState({});
-  const [isOpen, setIsOpen] = useState(false);
-  const onClose = () => setIsOpen(false);
-  const cancelRef = useRef(null);
 
-  const [show2, setShow2] = useState();
-  function handleDataFromChild(show2) {
-    setShow2(show2);
-  }
+  // data validation
+  const [show, setShow] = useState(false);
+  const [nameError, setNameError] = useState('此欄位必填');
+  const [namehasError, setNamehasError] = useState(false);
+  const [emailError, setEmailError] = useState('此欄位必填');
+  const [emailhasError, setEmailhasError] = useState(false);
+  const [contentError, setContentError] = useState('此欄位必填');
+  const [contenthasError, setContenthasError] = useState(false);
 
-  function validate() {
-    if (formData.name === undefined) {
-      setErrors({ ...errors, name: "Name is required" });
-      return false;
-    } else if (formData.name.length < 3) {
-      setErrors({ ...errors, name: "Name is too short" });
-      return false;
+  const isEmailValid = (email) => {
+    const regex = /^[a-zA-Z0–9._-]+@[a-zA-Z0–9.-]+\.[a-zA-Z]{2,4}$/;
+    return regex.test(email);
+   }
+  const handleEmailChange = (e) => {
+    const value = e.target.value;
+    setData({ ...formData, email: value })
+
+    if (value.trim() === '') {
+      setEmailError('此欄位必填');
+      setEmailhasError(true);
     }
+      else if (!isEmailValid(value)) {
+      setEmailError('請檢查您輸入的信箱是否為有效信箱，常見的錯誤輸入可能缺少@或是.com');
+      setEmailhasError(true);
+    } else {
+      setEmailError('');
+      setEmailhasError(false);
+    }
+  };
 
-    return true;
-  }
+  const handleNameChange = (e) => {
+    const value = e.target.value;
+    setData({ ...formData, name: value })
+
+    if (value.trim() === '') {
+      setNameError('此欄位必填');
+      setNamehasError(true);
+    }
+    else if (value.length < 2) {
+      setNameError('您的名字至少要有兩個字，您可能只成功輸入了一個字');
+      setNamehasError(true);
+    } else {
+      setNameError('');
+      setNamehasError(false);
+    }
+  };
+
+  const handleContentChange = (e) => {
+    const value = e.target.value;
+    setData({ ...formData, content: value })
+
+    if (value.trim() === '') {
+      setContentError('此欄位必填');
+      setContenthasError(true);
+    }
+   else {
+      setContentError('');
+      setContenthasError(false);
+    }
+  };
 
   function onSubmit() {
-    if (!validate()) {
+    if (namehasError || emailhasError || contenthasError) {
       setShow(true);
       return;
     }
     setData(defaultForm);
+    setShow(false);
     Swal.fire({
       title: "寄送成功",
       icon: "success",
       confirmButtonText: "OK",
     });
+  }
+
+  // for the alert dialog
+  const [isOpen, setIsOpen] = useState(false);
+  const onClose = () => setIsOpen(false);
+  const cancelRef = useRef(null);
+
+  // show for the footer
+  const [show2, setShow2] = useState();
+  function handleDataFromChild(show2) {
+    setShow2(show2);
+  }
+
+  if(window.location.reload){
+    <AlertDialog
+              leastDestructiveRef={cancelRef}
+              isOpen={isOpen}
+              onClose={onClose}
+            >
+              <AlertDialog.Content>
+                <AlertDialog.CloseButton />
+                <AlertDialog.Header _text={{ fontFamily: "cwTeXKai" }}>
+                  確定送出嗎？ Are you sure?
+                </AlertDialog.Header>
+                <AlertDialog.Body _text={{ fontFamily: "cwTeXKai" }}>
+                  請在送出前確認您的資訊是否正確。送出後將無法修改。 (Make sure
+                  you check your information before submitting. After
+                  submitting, you won't be able to edit it.)
+                </AlertDialog.Body>
+                <AlertDialog.Footer>
+                  <Button.Group space={2}>
+                    <Button
+                      colorScheme="danger"
+                      onPress={onClose}
+                      ref={cancelRef}
+                    >
+                      Cancel
+                    </Button>
+                    <Button
+                      colorScheme="success"
+                      onPress={() => {
+                        onClose();
+                        onSubmit();
+                      }}
+                    >
+                      Submit
+                    </Button>
+                  </Button.Group>
+                </AlertDialog.Footer>
+              </AlertDialog.Content>
+            </AlertDialog>
   }
 
   return (
@@ -105,78 +193,12 @@ const Contact = () => {
               &ensp;與我們聯絡
             </Text>
           </Box>
-          <Collapse isOpen={show}>
-            <Alert maxW="600" status="error">
-              <VStack space={1} flexShrink={1} w="100%">
-                <HStack
-                  flexShrink={1}
-                  space={2}
-                  alignItems="center"
-                  justifyContent="space-between"
-                >
-                  <HStack flexShrink={1} space={2} alignItems="center">
-                    <Alert.Icon />
-                    <Text
-                      fontSize="xl"
-                      fontWeight="medium"
-                      _dark={{
-                        color: "coolGray.800",
-                      }}
-                      fontFamily={"cwTeXKai"}
-                    >
-                      寄送失敗
-                    </Text>
-                  </HStack>
-                  <IconButton
-                    variant="unstyled"
-                    _focus={{
-                      borderWidth: 0,
-                    }}
-                    icon={<CloseIcon size="3" />}
-                    _icon={{
-                      color: "coolGray.600",
-                    }}
-                    onPress={() => setShow(false)}
-                  />
-                </HStack>
-                <Box
-                  pl="6"
-                  _dark={{
-                    _text: {
-                      color: "coolGray.600",
-                    },
-                  }}
-                  _text={{ fontFamily: "cwTeXKai" }}
-                >
-                  可能發生的原因:
-                </Box>
-                <Box
-                  pl="6"
-                  _dark={{
-                    _text: {
-                      color: "coolGray.600",
-                    },
-                  }}
-                  _text={{ fontFamily: "cwTeXKai" }}
-                >
-                  1、您的網路可能遇到了點問題，請幾分鐘後再試一次！
-                </Box>
-                <Box
-                  pl="6"
-                  _dark={{
-                    _text: {
-                      color: "coolGray.600",
-                    },
-                  }}
-                  _text={{ fontFamily: "cwTeXKai" }}
-                >
-                  2、您所輸入的資訊不符合欄位的要求，請您依據欄位下方的輸入建議重新輸入！
-                </Box>
-              </VStack>
-            </Alert>
-          </Collapse>
+          
+          <ErrorCollapse show={show} setShow={setShow} />
+
           <VStack w={"60%"} justifyContent={"center"}>
-            <FormControl isRequired isInvalid={"name" in errors}>
+            <FormControl isRequired isInvalid={nameError}>
+              {/* name section */}
               <FormControl.Label
                 _text={{
                   bold: true,
@@ -187,7 +209,7 @@ const Contact = () => {
               <Input
                 placeholder="John"
                 value={formData.name}
-                onChangeText={(value) => setData({ ...formData, name: value })}
+                onChange={handleNameChange}
               />
               <ZStack w={"105%"} alignItems={"flex-end"}>
                 <VStack>
@@ -195,17 +217,19 @@ const Contact = () => {
                   {show2 ? <Text fontFamily={"cwTeXKai"}>輸入文字</Text> : null}
                 </VStack>
               </ZStack>
-              {"name" in errors ? (
-                <FormControl.ErrorMessage
-                  leftIcon={<BiErrorCircle size="18px" color="#e60000" />}
-                >
-                  Error
-                </FormControl.ErrorMessage>
-              ) : (
-                <FormControl.HelperText>
-                  名字需為一個字以上 (Name should contain atleast 1 character.)
-                </FormControl.HelperText>
-              )}
+
+              <FormControl.ErrorMessage
+                leftIcon={<BiErrorCircle size="18px" color="#e60000" />}
+              >
+                {nameError}
+              </FormControl.ErrorMessage>
+
+              <FormControl.HelperText>
+                名字需為一個字以上 (Name should contain at least 1 character.)
+              </FormControl.HelperText>
+            </FormControl>
+            <FormControl isRequired isInvalid={emailError}>
+              {/* email section */}
               <FormControl.Label
                 _text={{
                   bold: true,
@@ -216,9 +240,18 @@ const Contact = () => {
               <Input
                 placeholder="john@gmail.com"
                 value={formData.email}
-                onChangeText={(value) => setData({ ...formData, email: value })}
+                onChange={handleEmailChange}
               />
-              <FormControl.HelperText
+               {emailError ? <FormControl.ErrorMessage
+                  leftIcon={<BiErrorCircle size="18px" color="#e60000" />}
+                  _text={{
+                    fontSize: "xs",
+                  }}
+                >
+                  {emailError}
+                </FormControl.ErrorMessage>: null}
+
+                <FormControl.HelperText
                 _text={{
                   fontSize: "xs",
                 }}
@@ -226,15 +259,11 @@ const Contact = () => {
                 "有效電子信箱需包含'@'和'.' (An valid email address at least
                 contain '@' and '.')"
               </FormControl.HelperText>
-              <FormControl.ErrorMessage
-                leftIcon={<BiErrorCircle size="18px" color="#e60000" />}
-                _text={{
-                  fontSize: "xs",
-                }}
-              >
-                Non-valid Email
-              </FormControl.ErrorMessage>
+            
+            </FormControl>
 
+            <FormControl isRequired isInvalid={contentError}>
+              {/* content section */}
               <FormControl.Label
                 _text={{
                   bold: true,
@@ -245,11 +274,21 @@ const Contact = () => {
               <TextArea
                 placeholder="Something you want to say to us...."
                 value={formData.content}
-                onChangeText={(value) =>
-                  setData({ ...formData, content: value })
-                }
+                onChange={handleContentChange}
+                _hover={contentError ? {borderColor: "#DC2625"} : {borderColor: "gray.300"}}
+                borderColor={contentError ? "#DC2625" : 'gray.300'}
+                borderWidth={contentError ? "2px" : '1px'}
               />
+              {contentError ? <FormControl.ErrorMessage
+                  leftIcon={<BiErrorCircle size="18px" color="#e60000" />}
+                  _text={{
+                    fontSize: "xs",
+                  }}
+                >
+                  {contentError}
+                </FormControl.ErrorMessage>: null}
             </FormControl>
+
             <Button
               onPress={() => setIsOpen(!isOpen)}
               mt="5"
