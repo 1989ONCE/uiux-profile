@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/uiux-profile/static/css/main.61dd68a8.css",
-    "main.js": "/uiux-profile/static/js/main.c2c97caf.js",
+    "main.js": "/uiux-profile/static/js/main.a2163b41.js",
     "static/js/453.09e242cc.chunk.js": "/uiux-profile/static/js/453.09e242cc.chunk.js",
     "static/media/chen.jpg": "/uiux-profile/static/media/chen.c6a64018cd90f81fe31e.jpg",
     "static/media/zheng.png": "/uiux-profile/static/media/zheng.80706b6261524d4cc3ca.png",
@@ -25,11 +25,11 @@
     "static/media/jobCard.png": "/uiux-profile/static/media/jobCard.2da083bd9cf0e1b6f0fa.png",
     "index.html": "/uiux-profile/index.html",
     "main.61dd68a8.css.map": "/uiux-profile/static/css/main.61dd68a8.css.map",
-    "main.c2c97caf.js.map": "/uiux-profile/static/js/main.c2c97caf.js.map",
+    "main.a2163b41.js.map": "/uiux-profile/static/js/main.a2163b41.js.map",
     "453.09e242cc.chunk.js.map": "/uiux-profile/static/js/453.09e242cc.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.61dd68a8.css",
-    "static/js/main.c2c97caf.js"
+    "static/js/main.a2163b41.js"
   ]
 }
