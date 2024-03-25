@@ -2,14 +2,19 @@ import "./App.css";
 import Contact from "./Team/Contact";
 import Home from "./Team/Home";
 import Chen from "./chen/Chen";
+import ChenHighlight from "./chen/ChenHighlight";
 import ChenJob from "./chen/ChenJob";
 import ChenProject from "./chen/ChenProject";
 import ChenInterest from "./chen/ChenInterest";
+
 import Liu from "./liu/Liu";
+import LiuHighlight from "./liu/LiuHighlight";
 import LiuJob from "./liu/LiuJob";
 import LiuProject from "./liu/LiuProject";
 import LiuInterest from "./liu/LiuInterest";
+
 import Zheng from "./zheng/Zheng";
+import ZhengHighlight from "./zheng/ZhengHighlight";
 import ZhengJob from "./zheng/ZhengJob";
 import ZhengProject from "./zheng/ZhengProject";
 import ZhengInterest from "./zheng/ZhengInterest";
@@ -28,15 +33,15 @@ function App() {
     },
     {
       path: "chen",
-      subPage: ["", "job", "project", "interest"],
+      subPage: ["", "highlight", "job", "project", "interest"],
     },
     {
       path: "liu",
-      subPage: ["", "job", "project", "interest"],
+      subPage: ["", "highlight", "job", "project", "interest"],
     },
     {
       path: "zheng",
-      subPage: ["", "job", "project", "interest"],
+      subPage: ["", "highlight", "job", "project", "interest"],
     },
   ];
   function nextPage() {
@@ -107,14 +112,17 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/chen" element={<Chen />} />
+        <Route path="/chen/highlight" element={<ChenHighlight />} />
         <Route path="/chen/job" element={<ChenJob />} />
         <Route path="/chen/project" element={<ChenProject />} />
         <Route path="/chen/interest" element={<ChenInterest />} />
         <Route path="/liu" element={<Liu />} />
+        <Route path="/liu/highlight" element={<LiuHighlight />} />
         <Route path="/liu/job" element={<LiuJob />} />
         <Route path="/liu/project" element={<LiuProject />} />
         <Route path="/liu/interest" element={<LiuInterest />} />
         <Route path="/zheng" element={<Zheng />} />
+        <Route path="/zheng/highlight" element={<ZhengHighlight />} />
         <Route path="/zheng/job" element={<ZhengJob />} />
         <Route path="/zheng/project" element={<ZhengProject />} />
         <Route path="/zheng/interest" element={<ZhengInterest />} />
