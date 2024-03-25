@@ -1,6 +1,6 @@
-import { Box, Avatar, VStack, ZStack, Text, HStack, Image, Center, AspectRatio } from "native-base";
+import { Box, VStack, Text, Image, AspectRatio } from "native-base";
 import '../App.css';
-import React, { useEffect } from "react";
+import React from "react";
 
 function JobCard(props) {
     const Jobs = () => (

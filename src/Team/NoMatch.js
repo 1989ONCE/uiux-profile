@@ -1,27 +1,17 @@
 import {
   NativeBaseProvider,
   Box,
-  ZStack,
   VStack,
   HStack,
   Image,
-  IconButton,
-  Tooltip,
   Center,
-  AspectRatio,
   Text,
   Button,
 } from "native-base";
 import "..//App.css";
-import { BsInfo } from "react-icons/bs";
-import { RiCustomerService2Fill } from "react-icons/ri";
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
-import Header from "../component/Header";
-import AvatarComponent2 from "../component/avatarComponent2";
 import bg2 from "./bg2.png";
-import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
-import { GoArrowUpLeft } from "react-icons/go";
 import "../App.css";
 
 function NoMatch(props) {

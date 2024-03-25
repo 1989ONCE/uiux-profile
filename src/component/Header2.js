@@ -1,4 +1,4 @@
-import { Box, Avatar, HStack, Text, ZStack, Pressable, Menu, IconButton, Button} from "native-base";
+import { Box, Menu, IconButton} from "native-base";
 import '../App.css';
 import { PiUserSwitchDuotone } from "react-icons/pi";
 import React, {useState} from "react";

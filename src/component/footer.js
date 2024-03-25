@@ -1,4 +1,4 @@
-import { Tooltip, Box, IconButton, HStack, Pressable, Image, Center, AspectRatio, ZStack} from "native-base";
+import { Tooltip, Box, IconButton, HStack } from "native-base";
 import '../App.css';
 import React, { useState } from "react";
 import Progress from "../component/Progress";

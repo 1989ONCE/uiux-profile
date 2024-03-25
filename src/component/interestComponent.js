@@ -1,4 +1,4 @@
-import { Box, Avatar, VStack, Text, HStack, Pressable, Image, Center, AspectRatio, ZStack} from "native-base";
+import { Box, VStack, Text, Image } from "native-base";
 import '../App.css';
 import React from "react";
 

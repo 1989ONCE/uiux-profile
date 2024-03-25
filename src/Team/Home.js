@@ -5,8 +5,6 @@ import {
 } from "native-base";
 import "..//App.css";
 import bg from "./bg.png";
-import { BsInfo } from "react-icons/bs";
-import { RiCustomerService2Fill } from "react-icons/ri";
 import React, { useState } from "react";
 import MemberCard from "./memberCard";
 import Footer from "../component/footer";
