@@ -11,6 +11,7 @@ import {
   Input,
   VStack,
   TextArea,
+  HStack
 } from "native-base";
 import "..//App.css";
 import bg from "./bg.png";
@@ -153,16 +154,32 @@ const Contact = () => {
             alignContent={"center"}
             justifyItems={"center"}
           >
-            <RiCustomerService2Fill size={"30px"} color={"#8E9D7D"} />
-            <Text
-              justifyContent={"center"}
-              fontSize={"30px"}
-              fontFamily={"cwTeXKai"}
-              fontWeight={600}
-              color={"#8E9D7D"}
-            >
-              &ensp;與我們聯絡
-            </Text>
+            
+            <VStack alignItems={'center'}>
+              <HStack>
+                <RiCustomerService2Fill size={"39px"} color={"#8E9D7D"} />
+                <Text
+                  justifyContent={"center"}
+                  fontSize={"30px"}
+                  fontFamily={"cwTeXKai"}
+                  fontWeight={600}
+                  color={"#8E9D7D"}
+                  paddingTop={'-900px'}
+                >
+                  
+                  &ensp;與我們聯絡{'\n'}
+                </Text>
+              </HStack>
+              <Text
+                justifyContent={"center"}
+                fontSize={"16px"}
+                fontFamily={"cwTeXKai"}
+                fontWeight={300}
+                color={"#8E9D7D"}
+              >
+                電話：(02) 1234-5678
+              </Text>
+            </VStack>
           </Box>
           
           <ErrorCollapse show={show} setShow={setShow} />
