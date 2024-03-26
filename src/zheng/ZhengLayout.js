@@ -99,7 +99,7 @@ const ZhengLayout = () => {
       </HStack>
 
       {/* Footer */}
-      <Footer sendShow={handleDataFromChild} rate={"73.37%"} />
+      <Footer sendShow={handleDataFromChild} />
     </Box>
   );
 };

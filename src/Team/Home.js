@@ -31,7 +31,7 @@ const Home = () => {
       <MemberCard show={parentShow} />
 
       {/* Footer */}
-      <Footer sendShow={handleDataFromChild} rate={""} />
+      <Footer sendShow={handleDataFromChild} />
     </Box>
   );
 };

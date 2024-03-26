@@ -99,7 +99,7 @@ const LiuLayout = () => {
       </HStack>
 
       {/* Footer */}
-      <Footer sendShow={handleDataFromChild} rate={"40.02%"} />
+      <Footer sendShow={handleDataFromChild} />
     </Box>
   );
 };
