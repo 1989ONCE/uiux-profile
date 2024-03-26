@@ -17,7 +17,6 @@ const ChenLayout = () => {
     setParentShow(show);
   }
   const location = useLocation();
-  console.log(location.pathname);
   const person = useMemo(() => location.pathname.split("/")[1], [location]);
   const page = useMemo(() => location.pathname.split("/")[2], [location]);
   const personIndex = useMemo(
