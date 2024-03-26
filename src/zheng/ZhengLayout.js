@@ -10,6 +10,7 @@ import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import { GoArrowUpLeft } from "react-icons/go";
 import Footer from "../component/footer";
 import routes from "../routes";
+import { GiArrowCursor } from "react-icons/gi";
 
 const ZhengLayout = () => {
   const [parentShow, setParentShow] = useState();
@@ -58,6 +59,7 @@ const ZhengLayout = () => {
         return bg2;
     }
   }, [page]);
+  const [showProjectHeading, setShowProjectHeading] = useState(false);
   return (
     <Box w={"full"} h={"full"}>
       {/* Header */}
@@ -79,6 +81,32 @@ const ZhengLayout = () => {
         zIndex={-1}
       ></Image>
 
+      {showProjectHeading && (
+        <Box
+          paddingLeft={"13rem"}
+          paddingTop={"1rem"}
+          alignItems={"flex-start"}
+          alignContent={"center"}
+          justifyContent={"center"}
+        >
+          <HStack>
+            <Text
+              fontSize={30}
+              fontFamily={"cwTeXKai"}
+              fontWeight={600}
+              color={"#8E9D7D"}
+            >
+              影音行銷作品{" "}
+            </Text>
+            <GiArrowCursor
+              color={"#8E9D7D"}
+              size={28}
+              style={{ paddingTop: "8px" }}
+            />
+          </HStack>
+        </Box>
+      )}
+
       <HStack
         paddingTop={"5rem"}
         alignItems={"center"}
@@ -90,7 +118,12 @@ const ZhengLayout = () => {
             <IoIosArrowBack size={"40px"} color="#8E9D7D" />
           </Link>
         </Box>
-        <Outlet />
+        <Outlet
+          context={{
+            showProjectHeading,
+            setShowProjectHeading,
+          }}
+        />
         <Box paddingRight={"2rem"}>
           <Link to={nextPage} style={{ textDecoration: "none" }}>
             <IoIosArrowForward size={"40px"} color="#8E9D7D" />
