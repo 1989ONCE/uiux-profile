@@ -328,7 +328,7 @@ const Contact = () => {
         </VStack>
       </ZStack>
       {/* Footer */}
-      <Footer sendShow={handleDataFromChild} rate={""} />
+      <Footer sendShow={handleDataFromChild} />
     </Box>
   );
 };

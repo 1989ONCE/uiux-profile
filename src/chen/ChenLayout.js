@@ -99,7 +99,7 @@ const ChenLayout = () => {
       </HStack>
 
       {/* Footer */}
-      <Footer sendShow={handleDataFromChild} rate={"6.67%"} />
+      <Footer sendShow={handleDataFromChild} />
     </Box>
   );
 };
