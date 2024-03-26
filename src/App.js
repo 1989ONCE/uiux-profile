@@ -12,10 +12,10 @@ function App() {
   const personList = ["chen", "liu", "zheng"];
   const person = useMemo(() => location.pathname.split("/")[1], [location]);
   const page = useMemo(() => location.pathname.split("/")[2], [location]);
-  const personIndex = useMemo(
-    () => routes[0].children.findIndex((route) => route.path === person),
-    [person]
-  );
+  const personIndex = useMemo(() => {
+    if (!personList.includes(person)) return -1;
+    return routes[0].children.findIndex((route) => route.path === person);
+  }, [person]);
   const pageIndex = useMemo(() => {
     if (personIndex === -1) return -1;
     return routes[0].children[personIndex].children.findIndex(
@@ -56,12 +56,6 @@ function App() {
 
   function nextPage() {
     if (personIndex === -1) {
-      navigate(
-        `${personList[0]}/${
-          routes[0].children.find((r) => r.path === personList[0]).children[0]
-            .path
-        }`
-      );
       return;
     }
     const personIndexInList = personList.findIndex((p) => p === person);
@@ -87,10 +81,16 @@ function App() {
   }
 
   function toStartOfPerson() {
+    if (personIndex === -1) {
+      return;
+    }
     navigate(`${person}/${routes[0].children[personIndex].children[0].path}`);
   }
 
   function toEndOfPerson() {
+    if (personIndex === -1) {
+      return;
+    }
     navigate(
       `${person}/${
         routes[0].children[personIndex].children[
