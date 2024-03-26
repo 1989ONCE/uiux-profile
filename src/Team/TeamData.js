@@ -49,8 +49,8 @@ const data = {
             "email": "  ppodds@g.ncu.edu.tw"
         },
         "highlight": {
-            "title": "",
-            "content": ""
+            "title": "\n新竹梅竹黑客松梅竹大獎【第二名】",
+            "content": "大二下時參與該競賽，負責系統的程式開發、自動化流程及伺服器建置。最終作品可以幫助投資者判斷自身的投資策略成效。"
         },
         "job": {
             "dots": liuzhengjob,
