@@ -1,14 +1,10 @@
-import {
-  NativeBaseProvider,
-  Box,
-  Image,
-} from "native-base";
-import "..//App.css";
+import { Box, Image } from "native-base";
+import "../App.css";
 import bg from "./bg.png";
 import React, { useState } from "react";
 import MemberCard from "./memberCard";
 import Footer from "../component/footer";
-import { useTour } from '@reactour/tour'
+import { useTour } from "@reactour/tour";
 
 const Home = () => {
   const [parentShow, setParentShow] = useState();
@@ -21,25 +17,22 @@ const Home = () => {
   }, []);
 
   return (
-    <NativeBaseProvider>
-      <Box w={"full"} h={"full"}>
-        {/* 'Background */}
-        <Image
-          w={"100%"}
-          height={"100%"}
-          source={bg}
-          alt="bg"
-          position={"fixed"}
-          zIndex={-1}
-        ></Image>
+    <Box w={"full"} h={"full"}>
+      {/* 'Background */}
+      <Image
+        w={"100%"}
+        height={"100%"}
+        source={bg}
+        alt="bg"
+        position={"fixed"}
+        zIndex={-1}
+      ></Image>
 
-        <MemberCard show={parentShow} />
+      <MemberCard show={parentShow} />
 
-        {/* Footer */}
-        <Footer sendShow={handleDataFromChild} rate={''}/>
-
-      </Box>
-    </NativeBaseProvider>
+      {/* Footer */}
+      <Footer sendShow={handleDataFromChild} rate={""} />
+    </Box>
   );
 };
 
