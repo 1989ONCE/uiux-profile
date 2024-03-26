@@ -132,7 +132,7 @@ const Contact = () => {
       <Image
         w={"100%"}
         height={"100%"}
-        source={bg}
+        source={{ uri: bg }}
         alt="bg"
         position={"fixed"}
         zIndex={-1}
