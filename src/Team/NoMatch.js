@@ -10,7 +10,7 @@ function NoMatch(props) {
       <Image
         w={"100%"}
         height={"100%"}
-        source={bg2}
+        source={{ uri: bg2 }}
         alt="bg"
         position={"fixed"}
         zIndex={-1}
