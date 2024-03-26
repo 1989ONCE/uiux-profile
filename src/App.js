@@ -1,75 +1,117 @@
 import "./App.css";
 
 import { NativeBaseProvider } from "native-base";
-import React, { useEffect } from "react";
-import { Outlet } from "react-router-dom";
+import React, { useEffect, useMemo } from "react";
+import { Outlet, useLocation, useNavigate } from "react-router-dom";
+import routes from "./routes";
 
 function App() {
   let ctrlDown = false;
-  let personIdx = 0;
-  let pageIdx = 0;
-  let route = [
-    {
-      path: "",
-      subPage: [""],
-    },
-    {
-      path: "chen",
-      subPage: ["", "highlight", "job", "project", "interest"],
-    },
-    {
-      path: "liu",
-      subPage: ["", "highlight", "job", "project", "interest"],
-    },
-    {
-      path: "zheng",
-      subPage: ["", "highlight", "job", "project", "interest"],
-    },
-  ];
-  function nextPage() {
-    if (
-      pageIdx === route[personIdx].subPage.length - 1 &&
-      personIdx === route.length - 1
-    ) {
-      return;
-    }
-    if (pageIdx === route[personIdx].subPage.length - 1) {
-      console.log(personIdx);
-      console.log(personIdx + 1);
-      personIdx = personIdx + 1;
-      console.log(personIdx);
-      pageIdx = 0;
-    } else {
-      pageIdx = pageIdx + 1;
-    }
-    window.location.href = `/uiux-profile/#/${route[personIdx].path}/${route[personIdx].subPage[pageIdx]}`;
-  }
+  const location = useLocation();
+  const navigate = useNavigate();
+  const personList = ["chen", "liu", "zheng"];
+  const person = useMemo(() => location.pathname.split("/")[1], [location]);
+  const page = useMemo(() => location.pathname.split("/")[2], [location]);
+  const personIndex = useMemo(
+    () => routes[0].children.findIndex((route) => route.path === person),
+    [person]
+  );
+  const pageIndex = useMemo(() => {
+    if (personIndex === -1) return -1;
+    return routes[0].children[personIndex].children.findIndex(
+      (route) => route.path === page
+    );
+  }, [page, personIndex]);
+
   function prevPage() {
-    if (pageIdx === 0 && personIdx === 0) {
+    if (personIndex === -1) {
       return;
     }
-    if (pageIdx === 0) {
-      personIdx = personIdx - 1;
-      pageIdx = route[personIdx].subPage.length - 1;
-    } else {
-      pageIdx = pageIdx - 1;
+    const isStartOfPerson = pageIndex === 0;
+    const personIndexInList = personList.findIndex((p) => p === person);
+    const isStartOfPersonList = personIndexInList === 0;
+    const prevPerson = personList[personIndexInList - 1];
+    if (isStartOfPerson && isStartOfPersonList) {
+      return;
     }
-    window.location.href = `/uiux-profile/#/${route[personIdx].path}/${route[personIdx].subPage[pageIdx]}`;
+    if (isStartOfPerson) {
+      const prevPersonRouteEntry = routes[0].children.find(
+        (r) => r.path === prevPerson
+      );
+      navigate(
+        `${prevPerson}/${
+          prevPersonRouteEntry.children[
+            prevPersonRouteEntry.children.length - 1
+          ].path
+        }`
+      );
+      return;
+    }
+    navigate(
+      `${person}/${
+        routes[0].children[personIndex].children[pageIndex - 1].path
+      }`
+    );
   }
+
+  function nextPage() {
+    if (personIndex === -1) {
+      navigate(
+        `${personList[0]}/${
+          routes[0].children.find((r) => r.path === personList[0]).children[0]
+            .path
+        }`
+      );
+      return;
+    }
+    const personIndexInList = personList.findIndex((p) => p === person);
+    const isEndOfPerson =
+      pageIndex === routes[0].children[personIndex].children.length - 1;
+    const isEndOfPersonList = personIndexInList === personList.length - 1;
+    const nextPerson = personList[personIndexInList + 1];
+    if (isEndOfPerson && isEndOfPersonList) {
+      return;
+    }
+    if (isEndOfPerson) {
+      const nextPersonRouteEntry = routes[0].children.find(
+        (r) => r.path === nextPerson
+      );
+      navigate(`${nextPerson}/${nextPersonRouteEntry.children[0].path}`);
+      return;
+    }
+    navigate(
+      `${person}/${
+        routes[0].children[personIndex].children[pageIndex + 1].path
+      }`
+    );
+  }
+
+  function toStartOfPerson() {
+    navigate(`${person}/${routes[0].children[personIndex].children[0].path}`);
+  }
+
+  function toEndOfPerson() {
+    navigate(
+      `${person}/${
+        routes[0].children[personIndex].children[
+          routes[0].children[personIndex].children.length
+        ].path
+      }`
+    );
+  }
+
   function handleKeyDown(event) {
     if (event.key === "Control") {
       ctrlDown = true;
     } else if (event.key === "ArrowDown" || event.key === "ArrowRight") {
       if (ctrlDown) {
-        pageIdx = route[personIdx].subPage.length - 1;
-        window.location.href = `/uiux-profile/#/${route[personIdx].path}/${route[personIdx].subPage[pageIdx]}`;
+        toEndOfPerson();
       } else {
         nextPage();
       }
     } else if (event.key === "ArrowUp" || event.key === "ArrowLeft") {
       if (ctrlDown) {
-        pageIdx = 0;
-        window.location.href = `/uiux-profile/#/${route[personIdx].path}/${route[personIdx].subPage[pageIdx]}`;
+        toStartOfPerson();
       } else {
         prevPage();
       }
@@ -89,11 +131,9 @@ function App() {
     };
   });
   return (
-    <>
-      <NativeBaseProvider>
-        <Outlet />
-      </NativeBaseProvider>
-    </>
+    <NativeBaseProvider>
+      <Outlet />
+    </NativeBaseProvider>
   );
 }
 
