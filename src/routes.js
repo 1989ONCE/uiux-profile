@@ -24,7 +24,7 @@ import ZhengProject from "./zheng/ZhengProject";
 import ZhengInterest from "./zheng/ZhengInterest";
 import NoMatch from "./Team/NoMatch";
 
-const route = [
+const routes = [
   {
     element: <App />,
     children: [
@@ -134,4 +134,4 @@ const route = [
   },
 ];
 
-export default route;
+export default routes;

@@ -5,11 +5,12 @@ import React, { useEffect, useMemo } from "react";
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import routes from "./routes";
 
+const personList = ["chen", "liu", "zheng"];
+
 function App() {
   let ctrlDown = false;
   const location = useLocation();
   const navigate = useNavigate();
-  const personList = ["chen", "liu", "zheng"];
   const person = useMemo(() => location.pathname.split("/")[1], [location]);
   const page = useMemo(() => location.pathname.split("/")[2], [location]);
   const personIndex = useMemo(() => {
