@@ -1,5 +1,4 @@
 import {
-  NativeBaseProvider,
   AlertDialog,
   Text,
   ZStack,
@@ -11,7 +10,7 @@ import {
   Input,
   VStack,
   TextArea,
-  HStack
+  HStack,
 } from "native-base";
 import "..//App.css";
 import bg from "./bg.png";
@@ -31,61 +30,60 @@ const Contact = () => {
 
   // data validation
   const [show, setShow] = useState(false);
-  const [nameError, setNameError] = useState('此欄位必填');
+  const [nameError, setNameError] = useState("此欄位必填");
   const [namehasError, setNamehasError] = useState(false);
-  const [emailError, setEmailError] = useState('此欄位必填');
+  const [emailError, setEmailError] = useState("此欄位必填");
   const [emailhasError, setEmailhasError] = useState(false);
-  const [contentError, setContentError] = useState('此欄位必填');
+  const [contentError, setContentError] = useState("此欄位必填");
   const [contenthasError, setContenthasError] = useState(false);
 
   const isEmailValid = (email) => {
     const regex = /^[a-zA-Z0–9._-]+@[a-zA-Z0–9.-]+\.[a-zA-Z]{2,4}$/;
     return regex.test(email);
-   }
+  };
   const handleEmailChange = (e) => {
     const value = e.target.value;
-    setData({ ...formData, email: value })
+    setData({ ...formData, email: value });
 
-    if (value.trim() === '') {
-      setEmailError('此欄位必填');
+    if (value.trim() === "") {
+      setEmailError("此欄位必填");
       setEmailhasError(true);
-    }
-      else if (!isEmailValid(value)) {
-      setEmailError('請檢查您輸入的信箱是否為有效信箱，常見的錯誤輸入可能缺少@或是.com');
+    } else if (!isEmailValid(value)) {
+      setEmailError(
+        "請檢查您輸入的信箱是否為有效信箱，常見的錯誤輸入可能缺少@或是.com"
+      );
       setEmailhasError(true);
     } else {
-      setEmailError('');
+      setEmailError("");
       setEmailhasError(false);
     }
   };
 
   const handleNameChange = (e) => {
     const value = e.target.value;
-    setData({ ...formData, name: value })
+    setData({ ...formData, name: value });
 
-    if (value.trim() === '') {
-      setNameError('此欄位必填');
+    if (value.trim() === "") {
+      setNameError("此欄位必填");
       setNamehasError(true);
-    }
-    else if (value.length < 2) {
-      setNameError('您的名字至少要有兩個字，您可能只成功輸入了一個字');
+    } else if (value.length < 2) {
+      setNameError("您的名字至少要有兩個字，您可能只成功輸入了一個字");
       setNamehasError(true);
     } else {
-      setNameError('');
+      setNameError("");
       setNamehasError(false);
     }
   };
 
   const handleContentChange = (e) => {
     const value = e.target.value;
-    setData({ ...formData, content: value })
+    setData({ ...formData, content: value });
 
-    if (value.trim() === '') {
-      setContentError('此欄位必填');
+    if (value.trim() === "") {
+      setContentError("此欄位必填");
       setContenthasError(true);
-    }
-   else {
-      setContentError('');
+    } else {
+      setContentError("");
       setContenthasError(false);
     }
   };
@@ -121,219 +119,217 @@ const Contact = () => {
       event.returnValue = "";
       return "";
     };
-  
+
     window.addEventListener("beforeunload", unloadCallback);
     return () => window.removeEventListener("beforeunload", unloadCallback);
   }, []);
 
   return (
-    <NativeBaseProvider>
-      <Box w={"full"} h={"full"}>
-        {/* 'Background */}
+    <Box w={"full"} h={"full"}>
+      {/* 'Background */}
 
-        <Header />
-        <Image
-          w={"100%"}
-          height={"100%"}
-          source={bg}
-          alt="bg"
-          position={"fixed"}
-          zIndex={-1}
-        ></Image>
+      <Header />
+      <Image
+        w={"100%"}
+        height={"100%"}
+        source={bg}
+        alt="bg"
+        position={"fixed"}
+        zIndex={-1}
+      ></Image>
 
-        {/* Contact */}
-        <Center
-          paddingTop={"3rem"}
-          h={"full"}
-          justifyContent={"center"}
+      {/* Contact */}
+      <Center
+        paddingTop={"3rem"}
+        h={"full"}
+        justifyContent={"center"}
+        justifyItems={"center"}
+      >
+        <Box
+          flexDirection={"row"}
+          alignItems={"center"}
+          alignContent={"center"}
           justifyItems={"center"}
         >
-          <Box
-            flexDirection={"row"}
-            alignItems={"center"}
-            alignContent={"center"}
-            justifyItems={"center"}
-          >
-            
-            <VStack alignItems={'center'}>
-              <HStack>
-                <RiCustomerService2Fill size={"39px"} color={"#8E9D7D"} />
-                <Text
-                  justifyContent={"center"}
-                  fontSize={"30px"}
-                  fontFamily={"cwTeXKai"}
-                  fontWeight={600}
-                  color={"#8E9D7D"}
-                  paddingTop={'-900px'}
-                >
-                  
-                  &ensp;與我們聯絡{'\n'}
-                </Text>
-              </HStack>
+          <VStack alignItems={"center"}>
+            <HStack>
+              <RiCustomerService2Fill size={"39px"} color={"#8E9D7D"} />
               <Text
                 justifyContent={"center"}
-                fontSize={"16px"}
+                fontSize={"30px"}
                 fontFamily={"cwTeXKai"}
-                fontWeight={300}
+                fontWeight={600}
                 color={"#8E9D7D"}
+                paddingTop={"-900px"}
               >
-                電話：(02) 1234-5678
+                &ensp;與我們聯絡{"\n"}
               </Text>
-            </VStack>
-          </Box>
-          
-          <ErrorCollapse show={show} setShow={setShow} />
+            </HStack>
+            <Text
+              justifyContent={"center"}
+              fontSize={"16px"}
+              fontFamily={"cwTeXKai"}
+              fontWeight={300}
+              color={"#8E9D7D"}
+            >
+              電話：(02) 1234-5678
+            </Text>
+          </VStack>
+        </Box>
 
-          <VStack w={"60%"} justifyContent={"center"}>
-            <FormControl isRequired isInvalid={nameError}>
-              {/* name section */}
-              <FormControl.Label
-                _text={{
-                  bold: true,
-                }}
-              >
-                姓名 Name
-              </FormControl.Label>
-              <Input
-                placeholder="John"
-                value={formData.name}
-                onChange={handleNameChange}
-              />
-              <ZStack w={"105%"} alignItems={"flex-end"}>
-                <VStack>
-                  {show2 ? <GoArrowUpLeft size={"2rem"} /> : null}
-                  {show2 ? <Text fontFamily={"cwTeXKai"}>輸入文字</Text> : null}
-                </VStack>
-              </ZStack>
+        <ErrorCollapse show={show} setShow={setShow} />
 
+        <VStack w={"60%"} justifyContent={"center"}>
+          <FormControl isRequired isInvalid={nameError}>
+            {/* name section */}
+            <FormControl.Label
+              _text={{
+                bold: true,
+              }}
+            >
+              姓名 Name
+            </FormControl.Label>
+            <Input
+              placeholder="John"
+              value={formData.name}
+              onChange={handleNameChange}
+            />
+            <ZStack w={"105%"} alignItems={"flex-end"}>
+              <VStack>
+                {show2 ? <GoArrowUpLeft size={"2rem"} /> : null}
+                {show2 ? <Text fontFamily={"cwTeXKai"}>輸入文字</Text> : null}
+              </VStack>
+            </ZStack>
+
+            <FormControl.ErrorMessage
+              leftIcon={<BiErrorCircle size="18px" color="#e60000" />}
+            >
+              {nameError}
+            </FormControl.ErrorMessage>
+
+            <FormControl.HelperText>
+              名字需為一個字以上 (Name should contain at least 1 character.)
+            </FormControl.HelperText>
+          </FormControl>
+          <FormControl isRequired isInvalid={emailError}>
+            {/* email section */}
+            <FormControl.Label
+              _text={{
+                bold: true,
+              }}
+            >
+              電子信箱 Email
+            </FormControl.Label>
+            <Input
+              placeholder="john@gmail.com"
+              value={formData.email}
+              onChange={handleEmailChange}
+            />
+            {emailError ? (
               <FormControl.ErrorMessage
                 leftIcon={<BiErrorCircle size="18px" color="#e60000" />}
-              >
-                {nameError}
-              </FormControl.ErrorMessage>
-
-              <FormControl.HelperText>
-                名字需為一個字以上 (Name should contain at least 1 character.)
-              </FormControl.HelperText>
-            </FormControl>
-            <FormControl isRequired isInvalid={emailError}>
-              {/* email section */}
-              <FormControl.Label
-                _text={{
-                  bold: true,
-                }}
-              >
-                電子信箱 Email
-              </FormControl.Label>
-              <Input
-                placeholder="john@gmail.com"
-                value={formData.email}
-                onChange={handleEmailChange}
-              />
-               {emailError ? <FormControl.ErrorMessage
-                  leftIcon={<BiErrorCircle size="18px" color="#e60000" />}
-                  _text={{
-                    fontSize: "xs",
-                  }}
-                >
-                  {emailError}
-                </FormControl.ErrorMessage>: null}
-
-                <FormControl.HelperText
                 _text={{
                   fontSize: "xs",
                 }}
               >
-                "有效電子信箱需包含'@'和'.' (An valid email address at least
-                contain '@' and '.')"
-              </FormControl.HelperText>
-            
-            </FormControl>
+                {emailError}
+              </FormControl.ErrorMessage>
+            ) : null}
 
-            <FormControl isRequired isInvalid={contentError}>
-              {/* content section */}
-              <FormControl.Label
+            <FormControl.HelperText
+              _text={{
+                fontSize: "xs",
+              }}
+            >
+              "有效電子信箱需包含'@'和'.' (An valid email address at least
+              contain '@' and '.')"
+            </FormControl.HelperText>
+          </FormControl>
+
+          <FormControl isRequired isInvalid={contentError}>
+            {/* content section */}
+            <FormControl.Label
+              _text={{
+                bold: true,
+              }}
+            >
+              您想與我們說的話 Content
+            </FormControl.Label>
+            <TextArea
+              placeholder="Something you want to say to us...."
+              value={formData.content}
+              onChange={handleContentChange}
+              _hover={
+                contentError
+                  ? { borderColor: "#DC2625" }
+                  : { borderColor: "gray.300" }
+              }
+              borderColor={contentError ? "#DC2625" : "gray.300"}
+              borderWidth={contentError ? "2px" : "1px"}
+            />
+            {contentError ? (
+              <FormControl.ErrorMessage
+                leftIcon={<BiErrorCircle size="18px" color="#e60000" />}
                 _text={{
-                  bold: true,
+                  fontSize: "xs",
                 }}
               >
-                您想與我們說的話 Content
-              </FormControl.Label>
-              <TextArea
-                placeholder="Something you want to say to us...."
-                value={formData.content}
-                onChange={handleContentChange}
-                _hover={contentError ? {borderColor: "#DC2625"} : {borderColor: "gray.300"}}
-                borderColor={contentError ? "#DC2625" : 'gray.300'}
-                borderWidth={contentError ? "2px" : '1px'}
-              />
-              {contentError ? <FormControl.ErrorMessage
-                  leftIcon={<BiErrorCircle size="18px" color="#e60000" />}
-                  _text={{
-                    fontSize: "xs",
-                  }}
-                >
-                  {contentError}
-                </FormControl.ErrorMessage>: null}
-            </FormControl>
+                {contentError}
+              </FormControl.ErrorMessage>
+            ) : null}
+          </FormControl>
 
-            <Button
-              onPress={() => setIsOpen(!isOpen)}
-              mt="5"
-              colorScheme="cyan"
-            >
-              Submit
-            </Button>
-            <AlertDialog
-              leastDestructiveRef={cancelRef}
-              isOpen={isOpen}
-              onClose={onClose}
-            >
-              <AlertDialog.Content>
-                <AlertDialog.CloseButton />
-                <AlertDialog.Header _text={{ fontFamily: "cwTeXKai" }}>
-                  確定送出嗎？ Are you sure?
-                </AlertDialog.Header>
-                <AlertDialog.Body _text={{ fontFamily: "cwTeXKai" }}>
-                  請在送出前確認您的資訊是否正確。送出後將無法修改。 (Make sure
-                  you check your information before submitting. After
-                  submitting, you won't be able to edit it.)
-                </AlertDialog.Body>
-                <AlertDialog.Footer>
-                  <Button.Group space={2}>
-                    <Button
-                      colorScheme="danger"
-                      onPress={onClose}
-                      ref={cancelRef}
-                    >
-                      Cancel
-                    </Button>
-                    <Button
-                      colorScheme="success"
-                      onPress={() => {
-                        onClose();
-                        onSubmit();
-                      }}
-                    >
-                      Submit
-                    </Button>
-                  </Button.Group>
-                </AlertDialog.Footer>
-              </AlertDialog.Content>
-            </AlertDialog>
-          </VStack>
-        </Center>
-        <ZStack w={"80%"} alignItems={"flex-end"}>
-          <VStack>
-            {show2 ? <GoArrowUpLeft size={"2rem"} /> : null}
-            {show2 ? <Text fontFamily={"cwTeXKai"}>點擊按鈕送出</Text> : null}
-          </VStack>
-        </ZStack>
-        {/* Footer */}
-        <Footer sendShow={handleDataFromChild} rate={''}/>
-
-      </Box>
-    </NativeBaseProvider>
+          <Button onPress={() => setIsOpen(!isOpen)} mt="5" colorScheme="cyan">
+            Submit
+          </Button>
+          <AlertDialog
+            leastDestructiveRef={cancelRef}
+            isOpen={isOpen}
+            onClose={onClose}
+          >
+            <AlertDialog.Content>
+              <AlertDialog.CloseButton />
+              <AlertDialog.Header _text={{ fontFamily: "cwTeXKai" }}>
+                確定送出嗎？ Are you sure?
+              </AlertDialog.Header>
+              <AlertDialog.Body _text={{ fontFamily: "cwTeXKai" }}>
+                請在送出前確認您的資訊是否正確。送出後將無法修改。 (Make sure
+                you check your information before submitting. After submitting,
+                you won't be able to edit it.)
+              </AlertDialog.Body>
+              <AlertDialog.Footer>
+                <Button.Group space={2}>
+                  <Button
+                    colorScheme="danger"
+                    onPress={onClose}
+                    ref={cancelRef}
+                  >
+                    Cancel
+                  </Button>
+                  <Button
+                    colorScheme="success"
+                    onPress={() => {
+                      onClose();
+                      onSubmit();
+                    }}
+                  >
+                    Submit
+                  </Button>
+                </Button.Group>
+              </AlertDialog.Footer>
+            </AlertDialog.Content>
+          </AlertDialog>
+        </VStack>
+      </Center>
+      <ZStack w={"80%"} alignItems={"flex-end"}>
+        <VStack>
+          {show2 ? <GoArrowUpLeft size={"2rem"} /> : null}
+          {show2 ? <Text fontFamily={"cwTeXKai"}>點擊按鈕送出</Text> : null}
+        </VStack>
+      </ZStack>
+      {/* Footer */}
+      <Footer sendShow={handleDataFromChild} rate={""} />
+    </Box>
   );
 };
 
