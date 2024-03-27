@@ -31,14 +31,14 @@ const Contact = () => {
   // data validation
   const [show, setShow] = useState(false);
   const [nameError, setNameError] = useState("此欄位必填");
-  const [namehasError, setNamehasError] = useState(true);
+  const [namehasError, setNamehasError] = useState(false);
   const [emailError, setEmailError] = useState("此欄位必填");
-  const [emailhasError, setEmailhasError] = useState(true);
+  const [emailhasError, setEmailhasError] = useState(false);
   const [contentError, setContentError] = useState("此欄位必填");
-  const [contenthasError, setContenthasError] = useState(true);
+  const [contenthasError, setContenthasError] = useState(false);
 
   const isEmailValid = (email) => {
-    const regex = /^[a-zA-Z0–9._-]+@[a-zA-Z0–9.-]+\.[a-zA-Z]{2,4}$/;
+    const regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
     return regex.test(email);
   };
   const handleEmailChange = (e) => {
