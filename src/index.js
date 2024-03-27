@@ -61,26 +61,32 @@ const router = createHashRouter(routes);
 
 root.render(
   <React.StrictMode>
-    <TourProvider
-      badgeContent={({ totalSteps, currentStep }) =>
-        currentStep + 1 + "/" + totalSteps
-      }
-      steps={steps}
-      disableKeyboardNavigation={disableKeyboardNavigation}
-      styles={{
-        popover: (base) => ({
-          ...base,
-          fontFamily: "cwTeXKai",
-          padding: "3rem",
-          lineHeight: "1.5rem",
-          whiteSpace: "pre-line",
-        }),
-      }}
-    >
+    {localStorage.getItem("tour") === "true" ? (
       <RouterProvider router={router} />
-    </TourProvider>
+    ) : (
+      <TourProvider
+        badgeContent={({ totalSteps, currentStep }) =>
+          currentStep + 1 + "/" + totalSteps
+        }
+        steps={steps}
+        disableKeyboardNavigation={disableKeyboardNavigation}
+        styles={{
+          popover: (base) => ({
+            ...base,
+            fontFamily: "cwTeXKai",
+            padding: "3rem",
+            lineHeight: "1.5rem",
+            whiteSpace: "pre-line",
+          }),
+        }}
+      >
+        <RouterProvider router={router} />
+      </TourProvider>
+    )}
   </React.StrictMode>
 );
+
+localStorage.setItem("tour", "true");
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
