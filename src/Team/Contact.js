@@ -31,11 +31,11 @@ const Contact = () => {
   // data validation
   const [show, setShow] = useState(false);
   const [nameError, setNameError] = useState("此欄位必填");
-  const [namehasError, setNamehasError] = useState(false);
+  const [namehasError, setNamehasError] = useState(true);
   const [emailError, setEmailError] = useState("此欄位必填");
-  const [emailhasError, setEmailhasError] = useState(false);
+  const [emailhasError, setEmailhasError] = useState(true);
   const [contentError, setContentError] = useState("此欄位必填");
-  const [contenthasError, setContenthasError] = useState(false);
+  const [contenthasError, setContenthasError] = useState(true);
 
   const isEmailValid = (email) => {
     const regex = /^[a-zA-Z0–9._-]+@[a-zA-Z0–9.-]+\.[a-zA-Z]{2,4}$/;
