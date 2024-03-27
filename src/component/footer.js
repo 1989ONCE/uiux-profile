@@ -52,7 +52,6 @@ function Footer(props) {
     setTimeoutId(
       setTimeout(() => {
         setIsShowingToast(false);
-        console.log("timeout");
       }, 2000)
     );
   }
