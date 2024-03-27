@@ -1,17 +1,17 @@
-import { Tooltip, Box, IconButton, HStack, useToast } from "native-base";
+import { Tooltip, Box, IconButton, HStack } from "native-base";
 import "../App.css";
 import React, { useState, useMemo, useEffect } from "react";
 import { BsInfo } from "react-icons/bs";
 import { RiCustomerService2Fill } from "react-icons/ri";
 import { Link, useLocation } from "react-router-dom";
 import routes from "../routes";
+import ProgressToast from "./ProgressToast";
 
 const personList = ["chen", "liu", "zheng"];
 
 function Footer(props) {
   const [show, setShow] = useState(false);
   const location = useLocation();
-  const toast = useToast();
 
   const rate = useMemo(() => {
     const curPerson = location.pathname.split("/")[1];
@@ -40,77 +40,57 @@ function Footer(props) {
     props.sendShow(!show);
   }
 
+  const [isShowingToast, setIsShowingToast] = useState(false);
+  const [timeoutId, setTimeoutId] = useState(null);
+
+  function showToast() {
+    if (timeoutId !== null) {
+      clearTimeout(timeoutId);
+      setTimeoutId(null);
+    }
+    setIsShowingToast(true);
+    setTimeoutId(
+      setTimeout(() => {
+        setIsShowingToast(false);
+        console.log("timeout");
+      }, 2000)
+    );
+  }
+
   useEffect(
     () => {
       if (rate === "") {
         return;
       }
-      toast.show({
-        title: rate,
-        status: "info",
-        placement: "bottom-right",
-        duration: 2000,
-        marginRight: "10px",
-        isClosable: true,
-      });
+      showToast(rate);
     },
     // eslint-disable-next-line react-hooks/exhaustive-deps
     [rate]
   );
 
   return (
-    <Box
-      className="footer"
-      height={"20px"}
-      paddingX={2}
-      position={"fixed"}
-      bottom={6}
-    >
-      <HStack>
-        <div className="third-step">
-          <Tooltip
-            label="使用教學"
-            bg="gray.600:alpha.30"
-            color="gray"
-            placement="top"
-          >
-            <IconButton
-              borderRadius="10rem"
-              icon={<BsInfo size={"27px"} />}
-              _icon={{
-                color: "#8E9D7D",
-                size: "md",
-              }}
-              _hover={{
-                bg: "cyan.600:alpha.30",
-              }}
-              _pressed={{
-                bg: "cyan.600:alpha.20",
-              }}
-              onPress={() => {
-                setShow(!show);
-                handleClick();
-              }}
-            />
-          </Tooltip>
-        </div>
-        <div className="fourth-step">
-          <Tooltip
-            label="聯絡我們"
-            bg="gray.600:alpha.30"
-            color="gray"
-            placement="top"
-          >
-            <Link to="/contact">
+    <>
+      <Box
+        className="footer"
+        height={"20px"}
+        paddingX={2}
+        position={"fixed"}
+        bottom={6}
+      >
+        <HStack>
+          <div className="third-step">
+            <Tooltip
+              label="使用教學"
+              bg="gray.600:alpha.30"
+              color="gray"
+              placement="top"
+            >
               <IconButton
                 borderRadius="10rem"
-                icon={<RiCustomerService2Fill size={"27px"} />}
+                icon={<BsInfo size={"27px"} />}
                 _icon={{
                   color: "#8E9D7D",
                   size: "md",
-                  borderColor: "#8E9D7D",
-                  borderWidth: "3px",
-                  borderStyle: "solid",
                 }}
                 _hover={{
                   bg: "cyan.600:alpha.30",
@@ -118,12 +98,45 @@ function Footer(props) {
                 _pressed={{
                   bg: "cyan.600:alpha.20",
                 }}
+                onPress={() => {
+                  setShow(!show);
+                  handleClick();
+                }}
               />
-            </Link>
-          </Tooltip>
-        </div>
-      </HStack>
-    </Box>
+            </Tooltip>
+          </div>
+          <div className="fourth-step">
+            <Tooltip
+              label="聯絡我們"
+              bg="gray.600:alpha.30"
+              color="gray"
+              placement="top"
+            >
+              <Link to="/contact">
+                <IconButton
+                  borderRadius="10rem"
+                  icon={<RiCustomerService2Fill size={"27px"} />}
+                  _icon={{
+                    color: "#8E9D7D",
+                    size: "md",
+                    borderColor: "#8E9D7D",
+                    borderWidth: "3px",
+                    borderStyle: "solid",
+                  }}
+                  _hover={{
+                    bg: "cyan.600:alpha.30",
+                  }}
+                  _pressed={{
+                    bg: "cyan.600:alpha.20",
+                  }}
+                />
+              </Link>
+            </Tooltip>
+          </div>
+        </HStack>
+      </Box>
+      <ProgressToast show={isShowingToast} text={rate} />
+    </>
   );
 }
 
