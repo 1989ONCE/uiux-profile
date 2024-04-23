@@ -1,6 +1,6 @@
 import { Box, VStack, ZStack, HStack, Image, Text } from "native-base";
 import "../App.css";
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useEffect } from "react";
 import { Link, Outlet, useLocation } from "react-router-dom";
 import Header from "../component/Header";
 import bg2 from "../Team/bg2.png";
@@ -58,6 +58,33 @@ const ChenLayout = () => {
         return bg2;
     }
   }, [page]);
+  const [animationClass, setAnimationClass] = useState("");
+  useEffect(() => {
+    document
+      .querySelector("#slide-body")
+      .addEventListener("animationend", (e) => {
+        if (
+          e.animationName !== "next-slide" &&
+          e.animationName !== "prev-slide"
+        ) {
+          return;
+        }
+        setAnimationClass("");
+      });
+    window.addEventListener("slidechange", (e) => {
+      if (e.detail.direction === "next") {
+        setAnimationClass("next-slide");
+      } else if (e.detail.direction === "prev") {
+        setAnimationClass("prev-slide");
+      }
+      return () => {
+        window.removeEventListener("slidechange");
+        document
+          .querySelector("#slide-body")
+          .removeEventListener("animationend");
+      };
+    });
+  });
   return (
     <Box w={"full"} h={"full"}>
       {/* Header */}
@@ -78,24 +105,27 @@ const ChenLayout = () => {
         position={"fixed"}
         zIndex={-1}
       ></Image>
-      <HStack
-        paddingTop={"5rem"}
-        alignItems={"center"}
-        alignContent={"center"}
-        justifyContent={"center"}
-      >
-        <Box paddingLeft={"2rem"}>
-          <Link to={prevPage} style={{ textDecoration: "none" }}>
-            <IoIosArrowBack size={"40px"} color="#8E9D7D" />
-          </Link>
-        </Box>
-        <Outlet />
-        <Box paddingRight={"2rem"}>
-          <Link to={nextPage} style={{ textDecoration: "none" }}>
-            <IoIosArrowForward size={"40px"} color="#8E9D7D" />
-          </Link>
-        </Box>
-      </HStack>
+
+      <div id="slide-body" class={animationClass}>
+        <HStack
+          paddingTop={"5rem"}
+          alignItems={"center"}
+          alignContent={"center"}
+          justifyContent={"center"}
+        >
+          <Box paddingLeft={"2rem"}>
+            <Link to={prevPage} style={{ textDecoration: "none" }}>
+              <IoIosArrowBack size={"40px"} color="#8E9D7D" />
+            </Link>
+          </Box>
+          <Outlet />
+          <Box paddingRight={"2rem"}>
+            <Link to={nextPage} style={{ textDecoration: "none" }}>
+              <IoIosArrowForward size={"40px"} color="#8E9D7D" />
+            </Link>
+          </Box>
+        </HStack>
+      </div>
 
       {/* Footer */}
       <Footer sendShow={handleDataFromChild} />
