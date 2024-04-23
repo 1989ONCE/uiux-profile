@@ -4,6 +4,7 @@ import { NativeBaseProvider } from "native-base";
 import React, { useEffect, useMemo } from "react";
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import routes from "./routes";
+import { SlideChangeEvent } from "./slide-change-event";
 
 const personList = ["chen", "liu", "zheng"];
 
@@ -39,6 +40,11 @@ function App() {
       const prevPersonRouteEntry = routes[0].children.find(
         (r) => r.path === prevPerson
       );
+      window.dispatchEvent(
+        new SlideChangeEvent({
+          direction: "prev",
+        })
+      );
       navigate(
         `${prevPerson}/${
           prevPersonRouteEntry.children[
@@ -48,6 +54,11 @@ function App() {
       );
       return;
     }
+    window.dispatchEvent(
+      new SlideChangeEvent({
+        direction: "prev",
+      })
+    );
     navigate(
       `${person}/${
         routes[0].children[personIndex].children[pageIndex - 1].path
@@ -71,9 +82,19 @@ function App() {
       const nextPersonRouteEntry = routes[0].children.find(
         (r) => r.path === nextPerson
       );
+      window.dispatchEvent(
+        new SlideChangeEvent({
+          direction: "next",
+        })
+      );
       navigate(`${nextPerson}/${nextPersonRouteEntry.children[0].path}`);
       return;
     }
+    window.dispatchEvent(
+      new SlideChangeEvent({
+        direction: "next",
+      })
+    );
     navigate(
       `${person}/${
         routes[0].children[personIndex].children[pageIndex + 1].path
@@ -85,6 +106,11 @@ function App() {
     if (personIndex === -1) {
       return;
     }
+    window.dispatchEvent(
+      new SlideChangeEvent({
+        direction: "prev",
+      })
+    );
     navigate(`${person}/${routes[0].children[personIndex].children[0].path}`);
   }
 
@@ -92,6 +118,11 @@ function App() {
     if (personIndex === -1) {
       return;
     }
+    window.dispatchEvent(
+      new SlideChangeEvent({
+        direction: "next",
+      })
+    );
     navigate(
       `${person}/${
         routes[0].children[personIndex].children[

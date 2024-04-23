@@ -31,3 +31,50 @@
   }
 }
 
+.slide-enter {
+  animation: enter .5s forwards;
+}
+
+.slide-exit {
+  animation: exit .5s forwards;
+}
+
+.next-slide {
+  animation: next-slide .5s forwards;
+}
+
+.prev-slide {
+  animation: prev-slide .5s forwards;
+}
+
+@keyframes next-slide {
+  0% {
+    transform: translateX(0%);
+  }
+  50% {
+    transform: translateX(-100%);
+  }
+  51% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes prev-slide {
+  0% {
+    transform: translateX(0%);
+  }
+  50% {
+    transform: translateX(100%);
+  }
+  51% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+
