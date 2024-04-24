@@ -7,8 +7,8 @@ function JobCard(props) {
         Array.from(props.section).map((s) => {
         return(
             <Box>
-                <Text fontWeight={'600'} color={'#8E9D7D'} fontSize={{sm:'20px', xl:'24px'}} fontFamily={'cwTeXKai'}>{s.title}{'\n'}</Text>
-                <Text fontWeight={'400'} color={'#8E9D7D'} fontSize={{sm:'14px', xl:'16px'}} fontFamily={'cwTeXKai'}>{s.period}{'\n\n\n'}</Text>
+                <Text fontWeight={'600'} color={'#3F3134'} fontSize={{sm:'20px', xl:'24px'}} fontFamily={'cwTeXKai'}>{s.title}{'\n'}</Text>
+                <Text fontWeight={'400'} color={'#3F3134'} fontSize={{sm:'14px', xl:'16px'}} fontFamily={'cwTeXKai'}>{s.period}{'\n\n\n'}</Text>
             </Box>
         )})
       );

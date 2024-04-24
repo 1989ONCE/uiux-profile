@@ -2,6 +2,7 @@ import { Box, VStack, Text, HStack, Image, AspectRatio } from "native-base";
 import "../App.css";
 import React from "react";
 import aboutCard from "../Team/aboutCard.png";
+import SubjectCard from "./subjectCard";
 
 function AboutCard(props) {
   return (
@@ -15,11 +16,11 @@ function AboutCard(props) {
         />
       </AspectRatio>
 
-      <VStack position={"absolute"} alignSelf={"center"} paddingTop={"120px"}>
+      <VStack position={"absolute"} alignSelf={"center"} paddingTop={"105px"} paddingLeft={'25px'}>
         <HStack>
           <Text
             fontWeight={"600"}
-            color={"#8E9D7D"}
+            color={"#3F3134"}
             fontSize={{ sm: "22px", xl: "26px" }}
             fontFamily={"cwTeXKai"}
           >
@@ -27,7 +28,7 @@ function AboutCard(props) {
           </Text>
           <Text
             fontWeight={"400"}
-            color={"#8E9D7D"}
+            color={"#3F3134"}
             fontSize={{ sm: "22px", xl: "26px" }}
             fontFamily={"cwTeXKai"}
           >
@@ -38,7 +39,7 @@ function AboutCard(props) {
         <HStack>
           <Text
             fontWeight={"600"}
-            color={"#8E9D7D"}
+            color={"#3F3134"}
             fontSize={{ sm: "22px", xl: "26px" }}
             fontFamily={"cwTeXKai"}
           >
@@ -46,7 +47,7 @@ function AboutCard(props) {
           </Text>
           <Text
             fontWeight={"400"}
-            color={"#8E9D7D"}
+            color={"#3F3134"}
             fontSize={{ sm: "22px", xl: "26px" }}
             fontFamily={"cwTeXKai"}
           >
@@ -57,7 +58,20 @@ function AboutCard(props) {
         <HStack>
           <Text
             fontWeight={"600"}
-            color={"#8E9D7D"}
+            color={"#3F3134"}
+            fontSize={{ sm: "22px", xl: "26px" }}
+            fontFamily={"cwTeXKai"}
+          >
+            喜歡科目
+          </Text>
+          <SubjectCard subject={props.subject[0]} level={'★ 簡單'}/>
+          <SubjectCard subject={props.subject[1]} level={'★★ 中等'}/>
+          <SubjectCard subject={props.subject[2]} level={'★★★ 困難'}/>
+        </HStack>
+        <HStack>
+          <Text
+            fontWeight={"600"}
+            color={"#3F3134"}
             fontSize={{ sm: "22px", xl: "26px" }}
             fontFamily={"cwTeXKai"}
           >
@@ -65,7 +79,7 @@ function AboutCard(props) {
           </Text>
           <Text
             fontWeight={"400"}
-            color={"#8E9D7D"}
+            color={"#3F3134"}
             fontSize={{ sm: "22px", xl: "26px" }}
             fontFamily={"CormorantGaramond"}
           >

@@ -9,7 +9,7 @@ function InterestComponent(props) {
             <Box w={'full'} h={'full'}>
                 <Image w={'full'} h={'full'} resizeMode="contain" source={props.img} alt="infobg" />
             </Box>
-            <Text color={'#8E9D7D'} paddingTop={'1rem'} fontFamily={"cwTeXKai"} fontWeight={800} fontSize={{sm: '1.3rem', lg: '2rem'}}>{props.title}</Text>
+            <Text color={'#3F3134'} paddingTop={'1rem'} fontFamily={"cwTeXKai"} fontWeight={800} fontSize={{sm: '1.3rem', lg: '2rem'}}>{props.title}</Text>
         </VStack>
     );
 }

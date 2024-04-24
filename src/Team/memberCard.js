@@ -19,7 +19,7 @@ function MemberCard(props) {
       <Text
         paddingTop={"5rem"}
         fontFamily={"cwTeXKai"}
-        color={"#8E9D7D"}
+        color={"#3F3134"}
         fontWeight={600}
         fontSize={{
           sm: "1.5rem",

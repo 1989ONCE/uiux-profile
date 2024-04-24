@@ -115,13 +115,13 @@ const ChenLayout = () => {
         >
           <Box paddingLeft={"2rem"}>
             <Link to={prevPage} style={{ textDecoration: "none" }}>
-              <IoIosArrowBack size={"40px"} color="#8E9D7D" />
+              <IoIosArrowBack size={"40px"} color="#3F3134" />
             </Link>
           </Box>
           <Outlet />
           <Box paddingRight={"2rem"}>
             <Link to={nextPage} style={{ textDecoration: "none" }}>
-              <IoIosArrowForward size={"40px"} color="#8E9D7D" />
+              <IoIosArrowForward size={"40px"} color="#3F3134" />
             </Link>
           </Box>
         </HStack>

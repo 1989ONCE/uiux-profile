@@ -121,12 +121,12 @@ const ZhengLayout = () => {
               fontSize={30}
               fontFamily={"cwTeXKai"}
               fontWeight={600}
-              color={"#8E9D7D"}
+              color={"#3F3134"}
             >
               影音行銷作品{" "}
             </Text>
             <GiArrowCursor
-              color={"#8E9D7D"}
+              color={"#3F3134"}
               size={28}
               style={{ paddingTop: "8px" }}
             />
@@ -143,7 +143,7 @@ const ZhengLayout = () => {
         >
           <Box paddingLeft={"2rem"}>
             <Link to={prevPage} style={{ textDecoration: "none" }}>
-              <IoIosArrowBack size={"40px"} color="#8E9D7D" />
+              <IoIosArrowBack size={"40px"} color="#3F3134" />
             </Link>
           </Box>
           <Outlet
@@ -154,7 +154,7 @@ const ZhengLayout = () => {
           />
           <Box paddingRight={"2rem"}>
             <Link to={nextPage} style={{ textDecoration: "none" }}>
-              <IoIosArrowForward size={"40px"} color="#8E9D7D" />
+              <IoIosArrowForward size={"40px"} color="#3F3134" />
             </Link>
           </Box>
         </HStack>

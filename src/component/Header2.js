@@ -25,7 +25,7 @@ function Header2(props) {
               borderRadius="10rem"
               icon={<PiUserSwitchDuotone size={"30px"} />}
               _icon={{
-                color: "#8E9D7D",
+                color: "#3F3134",
                 size: "md",
               }}
               _hover={{
@@ -43,7 +43,7 @@ function Header2(props) {
             _text={{
               fontSize: "18px",
               fontFamily: "cwTeXKai",
-              color: "#8E9D7D",
+              color: "#3F3134",
             }}
           >
             首頁
@@ -54,7 +54,7 @@ function Header2(props) {
             _text={{
               fontSize: "18px",
               fontFamily: "cwTeXKai",
-              color: "#8E9D7D",
+              color: "#3F3134",
             }}
           >
             陳佳妤
@@ -65,7 +65,7 @@ function Header2(props) {
             _text={{
               fontSize: "18px",
               fontFamily: "cwTeXKai",
-              color: "#8E9D7D",
+              color: "#3F3134",
             }}
           >
             劉泓毅
@@ -76,7 +76,7 @@ function Header2(props) {
             _text={{
               fontSize: "18px",
               fontFamily: "cwTeXKai",
-              color: "#8E9D7D",
+              color: "#3F3134",
             }}
           >
             鄭彩纓

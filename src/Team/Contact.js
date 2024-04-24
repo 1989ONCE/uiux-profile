@@ -153,13 +153,13 @@ const Contact = () => {
         >
           <VStack alignItems={"center"}>
             <HStack>
-              <RiCustomerService2Fill size={"39px"} color={"#8E9D7D"} />
+              <RiCustomerService2Fill size={"39px"} color={"#3F3134"} />
               <Text
                 justifyContent={"center"}
                 fontSize={"30px"}
                 fontFamily={"cwTeXKai"}
                 fontWeight={600}
-                color={"#8E9D7D"}
+                color={"#3F3134"}
                 paddingTop={"-900px"}
               >
                 &ensp;與我們聯絡{"\n"}
@@ -170,7 +170,7 @@ const Contact = () => {
               fontSize={"16px"}
               fontFamily={"cwTeXKai"}
               fontWeight={300}
-              color={"#8E9D7D"}
+              color={"#3F3134"}
             >
               電話：(02) 1234-5678
             </Text>
@@ -279,7 +279,7 @@ const Contact = () => {
             ) : null}
           </FormControl>
 
-          <Button onPress={() => setIsOpen(!isOpen)} mt="5" colorScheme="cyan">
+          <Button alignSelf={'flex-end'} w={'fit-content'} onPress={() => setIsOpen(!isOpen)} mt="5" bg="#cc4c24" _text={{color: 'white'}} _hover={{bg: '#b34724'}} _pressed={{bg: '#ac4220'}}>
             Submit
           </Button>
           <AlertDialog
@@ -300,14 +300,18 @@ const Contact = () => {
               <AlertDialog.Footer>
                 <Button.Group space={2}>
                   <Button
-                    colorScheme="danger"
+                    bg={'rose.700'}
+                    _hover={{bg: 'rose.600'}}
+                    _pressed={{bg: 'rose.600'}}
                     onPress={onClose}
                     ref={cancelRef}
                   >
                     Cancel
                   </Button>
                   <Button
-                    colorScheme="success"
+                    bg={'green.700'}
+                    _hover={{bg: 'green.600'}}
+                    _pressed={{bg: 'green.600'}}
                     onPress={() => {
                       onClose();
                       onSubmit();

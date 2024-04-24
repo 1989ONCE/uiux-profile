@@ -20,11 +20,11 @@ function Header(props) {
             textDecoration: props.page === "about" ? "underline" : "none",
             textDecorationColor:
               props.page === "about" ? "black" : "transparent",
-            color: props.page === "about" ? "black" : "#8E9D7D",
+            color: props.page === "about" ? "black" : "#3F3134",
           }}
         >
           <Text
-            color={props.page === "about" ? "black" : "#8E9D7D"}
+            color={props.page === "about" ? "black" : "#bb671b"}
             fontWeight={props.page === "about" ? 600 : 300}
             fontSize={{ sm: "1rem", md: "1.5rem" }}
             fontFamily={"CormorantGaramond"}
@@ -32,7 +32,7 @@ function Header(props) {
             About
           </Text>
         </Link>
-        <Text color={"#8E9D7D"} fontSize={{ sm: "0.8rem", md: "1.3rem" }}>
+        <Text color={"#bb671b"} fontSize={{ sm: "0.8rem", md: "1.3rem" }}>
           |
         </Text>
         <Link
@@ -44,15 +44,15 @@ function Header(props) {
           }}
         >
           <Text
-            color={props.page === "highlight" ? "black" : "#8E9D7D"}
-            fontWeight={props.page === "highlight" ? 600 : 300}
+            color={props.page === "highlight" ? "black" : "#bb671b"}
+            fontWeight={props.page === "highlight" ? 600 : 500}
             fontSize={{ sm: "1rem", md: "1.5rem" }}
             fontFamily={"CormorantGaramond"}
           >
             Highlights
           </Text>
         </Link>
-        <Text color={"#8E9D7D"} fontSize={{ sm: "0.8rem", md: "1.3rem" }}>
+        <Text color={"#bb671b"} fontSize={{ sm: "0.8rem", md: "1.3rem" }}>
           |
         </Text>
         <Link
@@ -63,7 +63,7 @@ function Header(props) {
           }}
         >
           <Text
-            color={props.page === "job" ? "black" : "#8E9D7D"}
+            color={props.page === "job" ? "black" : "#bb671b"}
             fontWeight={props.page === "job" ? 600 : 300}
             fontSize={{ sm: "1rem", md: "1.5rem" }}
             fontFamily={"CormorantGaramond"}
@@ -71,7 +71,7 @@ function Header(props) {
             Job Experience
           </Text>
         </Link>
-        <Text color={"#8E9D7D"} fontSize={{ sm: "0.8rem", md: "1.3rem" }}>
+        <Text color={"#bb671b"} fontSize={{ sm: "0.8rem", md: "1.3rem" }}>
           |
         </Text>
         <Link
@@ -83,7 +83,7 @@ function Header(props) {
           }}
         >
           <Text
-            color={props.page === "project" ? "black" : "#8E9D7D"}
+            color={props.page === "project" ? "black" : "#bb671b"}
             fontWeight={props.page === "project" ? 600 : 300}
             fontSize={{ sm: "1rem", md: "1.5rem" }}
             fontFamily={"CormorantGaramond"}
@@ -91,7 +91,7 @@ function Header(props) {
             Project
           </Text>
         </Link>
-        <Text color={"#8E9D7D"} fontSize={{ sm: "0.8rem", md: "1.3rem" }}>
+        <Text color={"#bb671b"} fontSize={{ sm: "0.8rem", md: "1.3rem" }}>
           |
         </Text>
         <Link
@@ -103,7 +103,7 @@ function Header(props) {
           }}
         >
           <Text
-            color={props.page === "interest" ? "black" : "#8E9D7D"}
+            color={props.page === "interest" ? "black" : "#bb671b"}
             fontWeight={props.page === "interest" ? 600 : 300}
             fontSize={{ sm: "1rem", md: "1.5rem" }}
             fontFamily={"CormorantGaramond"}
@@ -125,7 +125,7 @@ function Header(props) {
               borderRadius="10rem"
               icon={<PiUserSwitchDuotone size={"30px"} />}
               _icon={{
-                color: "#8E9D7D",
+                color: "#3F3134",
                 size: "md",
               }}
               _hover={{
@@ -143,7 +143,7 @@ function Header(props) {
             _text={{
               fontSize: "18px",
               fontFamily: "cwTeXKai",
-              color: "#8E9D7D",
+              color: "#3F3134",
             }}
           >
             首頁
@@ -154,7 +154,7 @@ function Header(props) {
             _text={{
               fontSize: "18px",
               fontFamily: "cwTeXKai",
-              color: "#8E9D7D",
+              color: "#3F3134",
             }}
           >
             陳佳妤
@@ -165,7 +165,7 @@ function Header(props) {
             _text={{
               fontSize: "18px",
               fontFamily: "cwTeXKai",
-              color: "#8E9D7D",
+              color: "#3F3134",
             }}
           >
             劉泓毅
@@ -176,7 +176,7 @@ function Header(props) {
             _text={{
               fontSize: "18px",
               fontFamily: "cwTeXKai",
-              color: "#8E9D7D",
+              color: "#3F3134",
             }}
           >
             鄭彩纓

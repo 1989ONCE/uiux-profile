@@ -27,7 +27,7 @@ function NoMatch(props) {
         >
           <VStack alignItems={"center"}>
             <Text
-              color={"#8E9D7D"}
+              color={"#3F3134"}
               paddingTop={"2rem"}
               fontFamily={"cwTeXKai"}
               fontWeight={800}
@@ -36,7 +36,7 @@ function NoMatch(props) {
               您似乎迷路了，讓我們帶您回到主頁
             </Text>
             <Link to={"/"} style={{ textDecoration: "none" }}>
-              <Button size="lg" marginTop={"2rem"}>
+              <Button bg={'#cc4c24'} size="lg" marginTop={"2rem"} _hover={{bg: '#b34724'}} _pressed={{bg: '#ac4220'}}>
                 回到主頁
               </Button>
             </Link>
