@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/uiux-profile/static/css/main.61dd68a8.css",
-    "main.js": "/uiux-profile/static/js/main.d998e0f6.js",
+    "main.css": "/uiux-profile/static/css/main.65bb2fe9.css",
+    "main.js": "/uiux-profile/static/js/main.4970d974.js",
     "static/js/453.09e242cc.chunk.js": "/uiux-profile/static/js/453.09e242cc.chunk.js",
     "static/media/chen.jpg": "/uiux-profile/static/media/chen.c6a64018cd90f81fe31e.jpg",
     "static/media/zheng.png": "/uiux-profile/static/media/zheng.80706b6261524d4cc3ca.png",
@@ -15,21 +15,21 @@
     "static/media/ncuapp.png": "/uiux-profile/static/media/ncuapp.3a92ee22091626a9ab70.png",
     "static/media/i1.png": "/uiux-profile/static/media/i1.0b2f44db7b71b4cda910.png",
     "static/media/i2.png": "/uiux-profile/static/media/i2.4b40566d7331bb2fea0a.png",
-    "static/media/bg3.png": "/uiux-profile/static/media/bg3.080ad6dbcc0e07b63d1f.png",
     "static/media/bg2.png": "/uiux-profile/static/media/bg2.c10ac8ddd58107de9f6f.png",
-    "static/media/bg4.png": "/uiux-profile/static/media/bg4.dafdbce66806d252820f.png",
-    "static/media/bg.png": "/uiux-profile/static/media/bg.c01e5fdcfac7716d0333.png",
-    "static/media/aboutCard.png": "/uiux-profile/static/media/aboutCard.761db7f8400a29e12b3e.png",
-    "static/media/highlightCard.png": "/uiux-profile/static/media/highlightCard.7df7a5ceeb4297057211.png",
-    "static/media/jobCard2.png": "/uiux-profile/static/media/jobCard2.21ffc811c7cab2163c79.png",
-    "static/media/jobCard.png": "/uiux-profile/static/media/jobCard.2da083bd9cf0e1b6f0fa.png",
+    "static/media/highlightCard.png": "/uiux-profile/static/media/highlightCard.a14d0189373fac4f3675.png",
+    "static/media/aboutCard.png": "/uiux-profile/static/media/aboutCard.d28566e2724260927f46.png",
+    "static/media/jobCard.png": "/uiux-profile/static/media/jobCard.ed436941400cc2b7a927.png",
+    "static/media/bg3.png": "/uiux-profile/static/media/bg3.922e31b52965a88a9f60.png",
+    "static/media/jobCard2.png": "/uiux-profile/static/media/jobCard2.1ce562f3a674d9b099c0.png",
+    "static/media/bg4.png": "/uiux-profile/static/media/bg4.61b06d63a9fe2703c1e9.png",
+    "static/media/bg.png": "/uiux-profile/static/media/bg.6baa63cb5d608c6bfb0d.png",
     "index.html": "/uiux-profile/index.html",
-    "main.61dd68a8.css.map": "/uiux-profile/static/css/main.61dd68a8.css.map",
-    "main.d998e0f6.js.map": "/uiux-profile/static/js/main.d998e0f6.js.map",
+    "main.65bb2fe9.css.map": "/uiux-profile/static/css/main.65bb2fe9.css.map",
+    "main.4970d974.js.map": "/uiux-profile/static/js/main.4970d974.js.map",
     "453.09e242cc.chunk.js.map": "/uiux-profile/static/js/453.09e242cc.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.61dd68a8.css",
-    "static/js/main.d998e0f6.js"
+    "static/css/main.65bb2fe9.css",
+    "static/js/main.4970d974.js"
   ]
 }
