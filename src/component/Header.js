@@ -13,6 +13,15 @@ function Header(props) {
       justifyContent={"end"}
       flexDirection={"row"}
     >
+      <Box padding={2} backgroundColor={'#EFAC91'} shadow={'3'} position={"absolute"} left={"1rem"} top={3} >
+        <Link to={"/"} style={{ textDecoration: "none" }} >
+          <Text fontWeight={500}
+            color={'#F8EDE6'}
+            fontSize={{ sm: "1rem", md: "1.5rem" }}>
+            NCU UIUX STUDIO
+          </Text>
+        </Link> 
+      </Box>
       <HStack space={5} top={5}>
         <Link
           to={`/${props.link}/about`}
@@ -138,17 +147,6 @@ function Header(props) {
           );
         }}
       >
-        <Link style={{ textDecoration: "none" }} to={"/"}>
-          <Menu.Item
-            _text={{
-              fontSize: "18px",
-              fontFamily: "cwTeXKai",
-              color: "#3F3134",
-            }}
-          >
-            首頁
-          </Menu.Item>
-        </Link>
         <Link style={{ textDecoration: "none" }} to={"/chen/about"}>
           <Menu.Item
             _text={{
