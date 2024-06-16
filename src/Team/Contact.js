@@ -13,7 +13,7 @@ import {
   HStack,
 } from "native-base";
 import "..//App.css";
-import bg from "./bg.png";
+import bg4 from "./bg4.png";
 import { RiCustomerService2Fill } from "react-icons/ri";
 import React, { useState, useRef, useEffect } from "react";
 import { BiErrorCircle } from "react-icons/bi";
@@ -132,8 +132,8 @@ const Contact = () => {
       <Image
         w={"100%"}
         height={"100%"}
-        source={{ uri: bg }}
-        alt="bg"
+        source={{ uri: bg4 }}
+        alt="bg4"
         position={"fixed"}
         zIndex={-1}
       ></Image>
