@@ -13,7 +13,7 @@ import {
   HStack,
 } from "native-base";
 import "..//App.css";
-import bg from "./bg.png";
+import bg4 from "./bg4.png";
 import { RiCustomerService2Fill } from "react-icons/ri";
 import React, { useState, useRef, useEffect } from "react";
 import { BiErrorCircle } from "react-icons/bi";
@@ -132,8 +132,8 @@ const Contact = () => {
       <Image
         w={"100%"}
         height={"100%"}
-        source={{ uri: bg }}
-        alt="bg"
+        source={{ uri: bg4 }}
+        alt="bg4"
         position={"fixed"}
         zIndex={-1}
       ></Image>
@@ -153,13 +153,13 @@ const Contact = () => {
         >
           <VStack alignItems={"center"}>
             <HStack>
-              <RiCustomerService2Fill size={"39px"} color={"#3F3134"} />
+              <RiCustomerService2Fill size={"39px"} color={"#94C6E1"} />
               <Text
                 justifyContent={"center"}
                 fontSize={"30px"}
                 fontFamily={""}
                 fontWeight={600}
-                color={"#3F3134"}
+                color={"#94C6E1"}
                 paddingTop={"-900px"}
               >
                 &ensp;與我們聯絡{"\n"}
@@ -170,7 +170,7 @@ const Contact = () => {
               fontSize={"16px"}
               fontFamily={""}
               fontWeight={300}
-              color={"#3F3134"}
+              color={"#94C6E1"}
             >
               電話：(02) 1234-5678
             </Text>
@@ -185,29 +185,31 @@ const Contact = () => {
             <FormControl.Label
               _text={{
                 bold: true,
+                color: '#94C6E1'
               }}
             >
               姓名 Name
             </FormControl.Label>
             <Input
+              color={'white'}
               placeholder="John"
               value={formData.name}
               onChange={handleNameChange}
             />
             <ZStack w={"105%"} alignItems={"flex-end"}>
               <VStack>
-                {show2 ? <GoArrowUpLeft size={"2rem"} /> : null}
-                {show2 ? <Text fontFamily={""}>輸入文字</Text> : null}
+                {show2 ? <GoArrowUpLeft color={'#94C6E1'}  size={"2rem"} /> : null}
+                {show2 ? <Text color={'#94C6E1'}  fontFamily={""}>輸入文字</Text> : null}
               </VStack>
             </ZStack>
 
-            <FormControl.ErrorMessage
-              leftIcon={<BiErrorCircle size="18px" color="#e60000" />}
+            <FormControl.ErrorMessage _text={{color: '#94C6E1'}}
+              leftIcon={<BiErrorCircle  size="18px" color={'#94C6E1'}/>}
             >
               {nameError}
             </FormControl.ErrorMessage>
 
-            <FormControl.HelperText>
+            <FormControl.HelperText _text={{color: '#94C6E1'}}>
               名字需為一個字以上 (Name should contain at least 1 character.)
             </FormControl.HelperText>
           </FormControl>
@@ -216,20 +218,23 @@ const Contact = () => {
             <FormControl.Label
               _text={{
                 bold: true,
+                color: '#94C6E1'
               }}
             >
               電子信箱 Email
             </FormControl.Label>
             <Input
+              color={'white'}
               placeholder="john@gmail.com"
               value={formData.email}
               onChange={handleEmailChange}
             />
             {emailError ? (
               <FormControl.ErrorMessage
-                leftIcon={<BiErrorCircle size="18px" color="#e60000" />}
+                leftIcon={<BiErrorCircle color={'#94C6E1'} size="18px" />}
                 _text={{
                   fontSize: "xs",
+                  color: '#94C6E1'
                 }}
               >
                 {emailError}
@@ -239,6 +244,7 @@ const Contact = () => {
             <FormControl.HelperText
               _text={{
                 fontSize: "xs",
+                color: '#94C6E1'
               }}
             >
               "有效電子信箱需包含'@'和'.' (An valid email address at least
@@ -251,11 +257,13 @@ const Contact = () => {
             <FormControl.Label
               _text={{
                 bold: true,
+                color: '#94C6E1'
               }}
             >
               您想與我們說的話 Content
             </FormControl.Label>
             <TextArea
+              color={'white'}
               placeholder="Something you want to say to us...."
               value={formData.content}
               onChange={handleContentChange}
@@ -269,9 +277,10 @@ const Contact = () => {
             />
             {contentError ? (
               <FormControl.ErrorMessage
-                leftIcon={<BiErrorCircle size="18px" color="#e60000" />}
+                leftIcon={<BiErrorCircle color={'#94C6E1'} size="18px" />}
                 _text={{
                   fontSize: "xs",
+                  color: '#94C6E1'
                 }}
               >
                 {contentError}
@@ -279,7 +288,7 @@ const Contact = () => {
             ) : null}
           </FormControl>
 
-          <Button alignSelf={'flex-end'} w={'fit-content'} onPress={() => setIsOpen(!isOpen)} mt="5" bg="#cc4c24" _text={{color: 'white'}} _hover={{bg: '#b34724'}} _pressed={{bg: '#ac4220'}}>
+          <Button alignSelf={'flex-end'} w={'fit-content'} onPress={() => setIsOpen(!isOpen)} mt="5" bg="#94C6E1" _text={{color: '#133363'}} _hover={{bg: '#C2CFE3'}} _pressed={{bg: '#ac4220'}}>
             Submit
           </Button>
           <AlertDialog
@@ -325,10 +334,10 @@ const Contact = () => {
           </AlertDialog>
         </VStack>
       </Center>
-      <ZStack w={"80%"} alignItems={"flex-end"}>
+      <ZStack w={"85%"} alignItems={"flex-end"}>
         <VStack>
-          {show2 ? <GoArrowUpLeft size={"2rem"} /> : null}
-          {show2 ? <Text fontFamily={""}>點擊按鈕送出</Text> : null}
+          {show2 ? <GoArrowUpLeft color={'#94C6E1'}  size={"2rem"} /> : null}
+          {show2 ? <Text color={'#94C6E1'} fontFamily={""}>點擊按鈕送出</Text> : null}
         </VStack>
       </ZStack>
       {/* Footer */}

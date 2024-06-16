@@ -88,7 +88,7 @@ function Footer(props) {
                 borderRadius="10rem"
                 icon={<BsInfo size={"27px"} />}
                 _icon={{
-                  color: "#3F3134",
+                  color: "#94C6E1",
                   size: "md",
                 }}
                 _hover={{
@@ -116,9 +116,9 @@ function Footer(props) {
                   borderRadius="10rem"
                   icon={<RiCustomerService2Fill size={"27px"} />}
                   _icon={{
-                    color: "#3F3134",
+                    color: "#94C6E1",
                     size: "md",
-                    borderColor: "#3F3134",
+                    borderColor: "#94C6E1",
                     borderWidth: "3px",
                     borderStyle: "solid",
                   }}

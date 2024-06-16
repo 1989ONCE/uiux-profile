@@ -89,11 +89,11 @@ const ChenLayout = () => {
     <Box w={"full"} h={"full"}>
       {/* Header */}
       <Header link={"chen"} page={page} />
-      <ZStack w={"90%"} alignItems={"flex-end"}>
+      <ZStack w={"85%"} alignItems={"flex-end"}>
         <VStack>
-          {parentShow ? <GoArrowUpLeft size={"2rem"} /> : null}
+          {parentShow ? <GoArrowUpLeft color={'#94C6E1'} size={"2rem"} /> : null}
           {parentShow ? (
-            <Text fontFamily={""}>點擊任一選項，前往該頁面</Text>
+            <Text color={'#94C6E1'} fontFamily={""}>點擊任一選項，前往該頁面</Text>
           ) : null}
         </VStack>
       </ZStack>
@@ -115,13 +115,13 @@ const ChenLayout = () => {
         >
           <Box paddingLeft={"2rem"}>
             <Link to={prevPage} style={{ textDecoration: "none" }}>
-              <IoIosArrowBack size={"40px"} color="#3F3134" />
+              <IoIosArrowBack size={"40px"} color="#94C6E1" />
             </Link>
           </Box>
           <Outlet />
           <Box paddingRight={"2rem"}>
             <Link to={nextPage} style={{ textDecoration: "none" }}>
-              <IoIosArrowForward size={"40px"} color="#3F3134" />
+              <IoIosArrowForward size={"40px"} color="#94C6E1" />
             </Link>
           </Box>
         </HStack>

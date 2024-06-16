@@ -14,8 +14,8 @@ function HighlightCard(props) {
             </AspectRatio>
         
             <VStack position={'absolute'} alignSelf={'center'} paddingTop={'50px'} paddingLeft={'10px'}>
-                    <Text fontWeight={'600'} color={'#3F3134'} fontSize={{sm:'22px', xl:'24px'}} fontFamily={''}>{props.title}{'\n'}</Text>
-                    <Text paddingTop={'15px'} w={'400px'} fontWeight={'400'} color={'#3F3134'} fontSize={{sm:'18px', xl:'20px'}} fontFamily={''}>{props.content}{'\n'}</Text>
+                    <Text fontWeight={'600'} color={'#133363'} fontSize={{sm:'22px', xl:'24px'}} fontFamily={''}>{props.title}{'\n'}</Text>
+                    <Text paddingTop={'15px'} w={'400px'} fontWeight={'400'} color={'#133363'} fontSize={{sm:'18px', xl:'20px'}} fontFamily={''}>{props.content}{'\n'}</Text>
             </VStack>
         </Box>
         

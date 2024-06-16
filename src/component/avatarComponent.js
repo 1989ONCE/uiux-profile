@@ -26,7 +26,7 @@ function AvatarComponent(props) {
                         {props.show ? <Text fontFamily={""}>點擊任一頭像查看成員介紹,{'\n'}並使用上(左)/下(右)鍵輕鬆{'\n'}切換前後頁</Text> : null}
                         </VStack>
                 </ZStack>
-                <Text color={'#3F3134'} paddingTop={'2rem'} fontFamily={""} fontWeight={600} fontSize={'2rem'}>{props.name}</Text>
+                <Text color={'#94C6E1'} paddingTop={'2rem'} fontFamily={""} fontWeight={600} fontSize={'2rem'}>{props.name}</Text>
             </Pressable>   
         </Box>
     );

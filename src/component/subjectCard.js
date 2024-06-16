@@ -15,13 +15,13 @@ function SubjectCard(props) {
                     fontSize: { sm: "22px", xl: "30px" },
                     fontWeight: "400",
                     fontFamily: "",
-                    color: '#3F3134'
+                    color: '#133363'
                 }}
                 >{props.subject.title}
             </Modal.Header>
             <Modal.Body>
                 <Text
-                bgColor={'#3f3134'}
+                bgColor={'#133363'}
                 fontWeight={"400"}
                 fontSize={{ sm: "22px", xl: "24px" }}
                 fontFamily={""}
@@ -40,14 +40,14 @@ function SubjectCard(props) {
                 // w={'fit-content'}
                 // paddingX={'5px'}
                 // bg={'#9d5642'}
-                color={'#3f3134'}
+                color={'#133363'}
                 fontWeight={"500"}
                 fontSize={{ sm: "22px", xl: "24px" }}
                 fontFamily={""}>
                 喜歡原因
                 </Text>
                 <Text
-                    color={'#3f3134'}
+                    color={'#133363'}
                     fontWeight={"400"}
                     fontSize={'18px'}
                     fontFamily={""}>
@@ -68,7 +68,7 @@ function SubjectCard(props) {
             <Text
                 textDecorationLine={"underline"}
                 fontWeight={"400"}
-                color={'#3F3134'}
+                color={'#133363'}
                 fontSize={{ sm: "20px", xl: "22px" }}
                 fontFamily={""}
             >{props.subject.title}</Text>

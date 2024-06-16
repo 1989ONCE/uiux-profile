@@ -27,7 +27,7 @@ function NoMatch(props) {
         >
           <VStack alignItems={"center"}>
             <Text
-              color={"#3F3134"}
+              color={"#94C6E1"}
               paddingTop={"2rem"}
               fontFamily={""}
               fontWeight={800}

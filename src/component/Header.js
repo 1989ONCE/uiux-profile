@@ -1,11 +1,13 @@
-import { Box, HStack, Text, Menu, IconButton } from "native-base";
+import { Box, HStack, Text, Menu, IconButton, Pressable } from "native-base";
 import "../App.css";
 import { PiUserSwitchDuotone } from "react-icons/pi";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { BsArrowBarRight, BsArrowBarLeft} from "react-icons/bs";
 
 function Header(props) {
   const [shouldOverlapWithTrigger] = useState(false);
+  const [showHeader, setShowHeader] = useState(true);
   return (
     <Box
       className="header"
@@ -13,27 +15,29 @@ function Header(props) {
       justifyContent={"end"}
       flexDirection={"row"}
     >
-      <Box padding={2} backgroundColor={'#EFAC91'} shadow={'3'} position={"absolute"} left={"1rem"} top={3} >
-        <Link to={"/"} style={{ textDecoration: "none" }} >
+      <Box top={4} backgroundColor={'#94C6E1'} shadow={'3'} position={"absolute"} left={"1rem"} >
+        <Link margin={10} to={"/"} style={{ textDecoration: "none" }} >
           <Text fontWeight={500}
-            color={'#F8EDE6'}
+            color={'#133363'}
+            margin={6}
             fontSize={{ sm: "1rem", md: "1.5rem" }}>
             NCU UIUX STUDIO
           </Text>
         </Link> 
       </Box>
+      {showHeader && (
       <HStack space={5} top={5}>
         <Link
           to={`/${props.link}/about`}
           style={{
             textDecoration: props.page === "about" ? "underline" : "none",
             textDecorationColor:
-              props.page === "about" ? "black" : "transparent",
-            color: props.page === "about" ? "black" : "#3F3134",
+              props.page === "about" ? "white" : "transparent",
+            color: props.page === "about" ? "#94C6E1" : "#94C6E1",
           }}
         >
           <Text
-            color={props.page === "about" ? "black" : "#bb671b"}
+            color={props.page === "about" ? "white" : "#94C6E1"}
             fontWeight={props.page === "about" ? 600 : 300}
             fontSize={{ sm: "1rem", md: "1.5rem" }}
             fontFamily={"CormorantGaramond"}
@@ -41,7 +45,7 @@ function Header(props) {
             About
           </Text>
         </Link>
-        <Text color={"#bb671b"} fontSize={{ sm: "0.8rem", md: "1.3rem" }}>
+        <Text color={"#94C6E1"} fontSize={{ sm: "0.8rem", md: "1.3rem" }}>
           |
         </Text>
         <Link
@@ -49,11 +53,11 @@ function Header(props) {
           style={{
             textDecoration: props.page === "highlight" ? "underline" : "none",
             textDecorationColor:
-              props.page === "highlight" ? "black" : "transparent",
+              props.page === "highlight" ? "white" : "transparent",
           }}
         >
           <Text
-            color={props.page === "highlight" ? "black" : "#bb671b"}
+            color={props.page === "highlight" ? "white" : "#94C6E1"}
             fontWeight={props.page === "highlight" ? 600 : 500}
             fontSize={{ sm: "1rem", md: "1.5rem" }}
             fontFamily={"CormorantGaramond"}
@@ -61,18 +65,18 @@ function Header(props) {
             Highlights
           </Text>
         </Link>
-        <Text color={"#bb671b"} fontSize={{ sm: "0.8rem", md: "1.3rem" }}>
+        <Text color={"#94C6E1"} fontSize={{ sm: "0.8rem", md: "1.3rem" }}>
           |
         </Text>
         <Link
           to={`/${props.link}/job`}
           style={{
             textDecoration: props.page === "job" ? "underline" : "none",
-            textDecorationColor: props.page === "job" ? "black" : "transparent",
+            textDecorationColor: props.page === "job" ? "white" : "transparent",
           }}
         >
           <Text
-            color={props.page === "job" ? "black" : "#bb671b"}
+            color={props.page === "job" ? "white" : "#94C6E1"}
             fontWeight={props.page === "job" ? 600 : 300}
             fontSize={{ sm: "1rem", md: "1.5rem" }}
             fontFamily={"CormorantGaramond"}
@@ -80,7 +84,7 @@ function Header(props) {
             Job Experience
           </Text>
         </Link>
-        <Text color={"#bb671b"} fontSize={{ sm: "0.8rem", md: "1.3rem" }}>
+        <Text color={"#94C6E1"} fontSize={{ sm: "0.8rem", md: "1.3rem" }}>
           |
         </Text>
         <Link
@@ -88,11 +92,11 @@ function Header(props) {
           style={{
             textDecoration: props.page === "project" ? "underline" : "none",
             textDecorationColor:
-              props.page === "project" ? "black" : "transparent",
+              props.page === "project" ? "white" : "transparent",
           }}
         >
           <Text
-            color={props.page === "project" ? "black" : "#bb671b"}
+            color={props.page === "project" ? "white" : "#94C6E1"}
             fontWeight={props.page === "project" ? 600 : 300}
             fontSize={{ sm: "1rem", md: "1.5rem" }}
             fontFamily={"CormorantGaramond"}
@@ -100,7 +104,7 @@ function Header(props) {
             Project
           </Text>
         </Link>
-        <Text color={"#bb671b"} fontSize={{ sm: "0.8rem", md: "1.3rem" }}>
+        <Text color={"#94C6E1"} fontSize={{ sm: "0.8rem", md: "1.3rem" }}>
           |
         </Text>
         <Link
@@ -108,11 +112,11 @@ function Header(props) {
           style={{
             textDecoration: props.page === "interest" ? "underline" : "none",
             textDecorationColor:
-              props.page === "interest" ? "black" : "transparent",
+              props.page === "interest" ? "white" : "transparent",
           }}
         >
           <Text
-            color={props.page === "interest" ? "black" : "#bb671b"}
+            color={props.page === "interest" ? "white" : "#94C6E1"}
             fontWeight={props.page === "interest" ? 600 : 300}
             fontSize={{ sm: "1rem", md: "1.5rem" }}
             fontFamily={"CormorantGaramond"}
@@ -121,7 +125,7 @@ function Header(props) {
           </Text>
         </Link>
       </HStack>
-
+      )}
       <Menu
         w="160"
         shouldOverlapWithTrigger={shouldOverlapWithTrigger} // @ts-ignore
@@ -134,7 +138,7 @@ function Header(props) {
               borderRadius="10rem"
               icon={<PiUserSwitchDuotone size={"30px"} />}
               _icon={{
-                color: "#3F3134",
+                color: "#94C6E1",
                 size: "md",
               }}
               _hover={{
@@ -152,7 +156,7 @@ function Header(props) {
             _text={{
               fontSize: "18px",
               fontFamily: "",
-              color: "#3F3134",
+              color: "#133363",
             }}
           >
             陳佳妤
@@ -163,7 +167,7 @@ function Header(props) {
             _text={{
               fontSize: "18px",
               fontFamily: "",
-              color: "#3F3134",
+              color: "#133363",
             }}
           >
             劉泓毅
@@ -174,13 +178,16 @@ function Header(props) {
             _text={{
               fontSize: "18px",
               fontFamily: "",
-              color: "#3F3134",
+              color: "#133363",
             }}
           >
             鄭彩纓
           </Menu.Item>
         </Link>
       </Menu>
+      <Pressable top={5}>
+        {showHeader ? <BsArrowBarRight size={30} color={'#94C6E1'} onClick={() => setShowHeader(false)} /> : <BsArrowBarLeft size={30} color={'#94C6E1'} onClick={() => setShowHeader(true)} />}
+      </Pressable>
     </Box>
   );
 }

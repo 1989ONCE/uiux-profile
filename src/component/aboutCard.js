@@ -20,7 +20,7 @@ function AboutCard(props) {
         <HStack>
           <Text
             fontWeight={"600"}
-            color={"#3F3134"}
+            color={"#133363"}
             fontSize={{ sm: "20px", xl: "22px" }}
             fontFamily={""}
           >
@@ -28,7 +28,7 @@ function AboutCard(props) {
           </Text>
           <Text
             fontWeight={"400"}
-            color={"#3F3134"}
+            color={"#133363"}
             fontSize={{ sm: "20px", xl: "22px" }}
             fontFamily={""}
           >
@@ -39,7 +39,7 @@ function AboutCard(props) {
         <HStack>
           <Text
             fontWeight={"600"}
-            color={"#3F3134"}
+            color={"#133363"}
             fontSize={{ sm: "20px", xl: "22px" }}
             fontFamily={""}
           >
@@ -47,7 +47,7 @@ function AboutCard(props) {
           </Text>
           <Text
             fontWeight={"400"}
-            color={"#3F3134"}
+            color={"#133363"}
             fontSize={{ sm: "20px", xl: "22px" }}
             fontFamily={""}
           >
@@ -58,7 +58,7 @@ function AboutCard(props) {
         <HStack>
           <Text
             fontWeight={"600"}
-            color={"#3F3134"}
+            color={"#133363"}
             fontSize={{ sm: "20px", xl: "22px" }}
             fontFamily={""}
           >
@@ -71,7 +71,7 @@ function AboutCard(props) {
         <HStack>
           <Text
             fontWeight={"600"}
-            color={"#3F3134"}
+            color={"#133363"}
             fontSize={{ sm: "20px", xl: "22px" }}
             fontFamily={""}
           >
@@ -79,7 +79,7 @@ function AboutCard(props) {
           </Text>
           <Text
             fontWeight={"400"}
-            color={"#3F3134"}
+            color={"#133363"}
             fontSize={{ sm: "20px", xl: "22px" }}
             fontFamily={"CormorantGaramond"}
           >
