@@ -13,10 +13,11 @@ function Header(props) {
       justifyContent={"end"}
       flexDirection={"row"}
     >
-      <Box padding={2} backgroundColor={'#EFAC91'} shadow={'3'} position={"absolute"} left={"1rem"} top={3} >
-        <Link to={"/"} style={{ textDecoration: "none" }} >
+      <Box top={4} backgroundColor={'#EFAC91'} shadow={'3'} position={"absolute"} left={"1rem"} >
+        <Link margin={10} to={"/"} style={{ textDecoration: "none" }} >
           <Text fontWeight={500}
             color={'#F8EDE6'}
+            margin={6}
             fontSize={{ sm: "1rem", md: "1.5rem" }}>
             NCU UIUX STUDIO
           </Text>
