@@ -2,7 +2,7 @@
   "name": "uiux-profile",
   "version": "0.1.0",
   "private": false,
-  "homepage": "https://1989ONCE.github.io/uiux-profile",
+  "homepage": "https://uiux-profile-git-female-susan-chens-projects-8f05839f.vercel.app/",
   "dependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@reactour/tour": "^3.6.1",
