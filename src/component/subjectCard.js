@@ -14,7 +14,7 @@ function SubjectCard(props) {
                 _text={{
                     fontSize: { sm: "22px", xl: "30px" },
                     fontWeight: "400",
-                    fontFamily: "cwTeXKai",
+                    fontFamily: "",
                     color: '#3F3134'
                 }}
                 >{props.subject.title}
@@ -24,7 +24,7 @@ function SubjectCard(props) {
                 bgColor={'#3f3134'}
                 fontWeight={"400"}
                 fontSize={{ sm: "22px", xl: "24px" }}
-                fontFamily={"cwTeXKai"}
+                fontFamily={""}
                 >
                 難易度
                 </Text>
@@ -32,7 +32,7 @@ function SubjectCard(props) {
                     color={'darkBlue.700'}
                     fontWeight={"500"}
                     fontSize={'20px'}
-                    fontFamily={"cwTeXKai"}>
+                    fontFamily={""}>
                     {props.level}
                 </Text>
                 {'\n'}
@@ -43,14 +43,14 @@ function SubjectCard(props) {
                 color={'#3f3134'}
                 fontWeight={"500"}
                 fontSize={{ sm: "22px", xl: "24px" }}
-                fontFamily={"cwTeXKai"}>
+                fontFamily={""}>
                 喜歡原因
                 </Text>
                 <Text
                     color={'#3f3134'}
                     fontWeight={"500"}
                     fontSize={'20px'}
-                    fontFamily={"cwTeXKai"}>
+                    fontFamily={""}>
                 {props.subject.reason}
                 </Text>
             </Modal.Body>
@@ -69,8 +69,8 @@ function SubjectCard(props) {
                 textDecorationLine={"underline"}
                 fontWeight={"400"}
                 color={'#3F3134'}
-                fontSize={{ sm: "22px", xl: "26px" }}
-                fontFamily={"cwTeXKai"}
+                fontSize={{ sm: "20px", xl: "22px" }}
+                fontFamily={""}
             >{props.subject.title}</Text>
         </Pressable>
     </>

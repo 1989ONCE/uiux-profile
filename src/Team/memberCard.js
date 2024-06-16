@@ -18,7 +18,7 @@ function MemberCard(props) {
     >
       <Text
         paddingTop={"5rem"}
-        fontFamily={"cwTeXKai"}
+        fontFamily={""}
         color={"#3F3134"}
         fontWeight={600}
         fontSize={{

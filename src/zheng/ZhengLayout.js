@@ -95,7 +95,7 @@ const ZhengLayout = () => {
         <VStack>
           {parentShow ? <GoArrowUpLeft size={"2rem"} /> : null}
           {parentShow ? (
-            <Text fontFamily={"cwTeXKai"}>點擊任一選項，前往該頁面</Text>
+            <Text fontFamily={""}>點擊任一選項，前往該頁面</Text>
           ) : null}
         </VStack>
       </ZStack>
@@ -119,7 +119,7 @@ const ZhengLayout = () => {
           <HStack>
             <Text
               fontSize={30}
-              fontFamily={"cwTeXKai"}
+              fontFamily={""}
               fontWeight={600}
               color={"#3F3134"}
             >

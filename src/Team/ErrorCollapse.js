@@ -29,7 +29,7 @@ function ErrorCollapse(props) {
                     _dark={{
                         color: "coolGray.800",
                     }}
-                    fontFamily={"cwTeXKai"}
+                    fontFamily={""}
                     >
                     寄送失敗
                     </Text>
@@ -53,7 +53,7 @@ function ErrorCollapse(props) {
                     color: "coolGray.600",
                     },
                 }}
-                _text={{ fontFamily: "cwTeXKai" }}
+                _text={{ fontFamily: "" }}
                 >
                 可能發生的原因:
                 </Box>
@@ -64,7 +64,7 @@ function ErrorCollapse(props) {
                     color: "coolGray.600",
                     },
                 }}
-                _text={{ fontFamily: "cwTeXKai" }}
+                _text={{ fontFamily: "" }}
                 >
                 1、您的網路可能遇到了點問題，請幾分鐘後再試一次！
                 </Box>
@@ -75,7 +75,7 @@ function ErrorCollapse(props) {
                     color: "coolGray.600",
                     },
                 }}
-                _text={{ fontFamily: "cwTeXKai" }}
+                _text={{ fontFamily: "" }}
                 >
                 2、您所輸入的資訊不符合欄位的要求，請您依據欄位下方的輸入建議重新輸入！
                 </Box>

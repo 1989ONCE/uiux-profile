@@ -151,7 +151,7 @@ function Header(props) {
           <Menu.Item
             _text={{
               fontSize: "18px",
-              fontFamily: "cwTeXKai",
+              fontFamily: "",
               color: "#3F3134",
             }}
           >
@@ -162,7 +162,7 @@ function Header(props) {
           <Menu.Item
             _text={{
               fontSize: "18px",
-              fontFamily: "cwTeXKai",
+              fontFamily: "",
               color: "#3F3134",
             }}
           >
@@ -173,7 +173,7 @@ function Header(props) {
           <Menu.Item
             _text={{
               fontSize: "18px",
-              fontFamily: "cwTeXKai",
+              fontFamily: "",
               color: "#3F3134",
             }}
           >

@@ -10,7 +10,7 @@ function ProjectComponent() {
         <Center w={'80%'} h={'455px'}>
             <HStack w={'full'} h={'full'} space={10} paddingLeft={'2rem'} flexDirection={'row'} flexWrap={'wrap'} justifyItems={'center'} justifyContent={'center'}>
                     <VStack h={'full'} alignItems={'center'}> 
-                        <Text paddingBottom={'20px'} color={'#3F3134'} paddingTop={'2rem'} fontFamily={"cwTeXKai"} fontWeight={800} fontSize={{sm: '1.4rem', lg: '2rem'}}>NCU APP - 為中央學生開發的軟體</Text>
+                        <Text paddingBottom={'20px'} color={'#3F3134'} paddingTop={'2rem'} fontFamily={""} fontWeight={800} fontSize={{sm: '1.4rem', lg: '2rem'}}>NCU APP - 為中央學生開發的軟體</Text>
                         <AspectRatio w="60%" h={'full'} ratio={1} >
                             <Image source={{
                             uri: ncuapp
@@ -20,7 +20,7 @@ function ProjectComponent() {
                     </VStack>
 
                     <VStack h={'full'} alignItems={'center'}> 
-                        <Text paddingBottom={'20px'} color={'#3F3134'} paddingTop={'2rem'} fontFamily={"cwTeXKai"} fontWeight={800} fontSize={{sm: '1.4rem', lg: '2rem'}}>AI污邊界 - 污水廠之監控與警示系統 </Text>
+                        <Text paddingBottom={'20px'} color={'#3F3134'} paddingTop={'2rem'} fontFamily={""} fontWeight={800} fontSize={{sm: '1.4rem', lg: '2rem'}}>AI污邊界 - 污水廠之監控與警示系統 </Text>
                         <AspectRatio w="100%" h={'full'} ratio={16/ 9} >
                             <Image source={{
                             uri: ai

@@ -157,7 +157,7 @@ const Contact = () => {
               <Text
                 justifyContent={"center"}
                 fontSize={"30px"}
-                fontFamily={"cwTeXKai"}
+                fontFamily={""}
                 fontWeight={600}
                 color={"#3F3134"}
                 paddingTop={"-900px"}
@@ -168,7 +168,7 @@ const Contact = () => {
             <Text
               justifyContent={"center"}
               fontSize={"16px"}
-              fontFamily={"cwTeXKai"}
+              fontFamily={""}
               fontWeight={300}
               color={"#3F3134"}
             >
@@ -197,7 +197,7 @@ const Contact = () => {
             <ZStack w={"105%"} alignItems={"flex-end"}>
               <VStack>
                 {show2 ? <GoArrowUpLeft size={"2rem"} /> : null}
-                {show2 ? <Text fontFamily={"cwTeXKai"}>輸入文字</Text> : null}
+                {show2 ? <Text fontFamily={""}>輸入文字</Text> : null}
               </VStack>
             </ZStack>
 
@@ -289,10 +289,10 @@ const Contact = () => {
           >
             <AlertDialog.Content>
               <AlertDialog.CloseButton />
-              <AlertDialog.Header _text={{ fontFamily: "cwTeXKai" }}>
+              <AlertDialog.Header _text={{ fontFamily: "" }}>
                 確定送出嗎？ Are you sure?
               </AlertDialog.Header>
-              <AlertDialog.Body _text={{ fontFamily: "cwTeXKai" }}>
+              <AlertDialog.Body _text={{ fontFamily: "" }}>
                 請在送出前確認您的資訊是否正確。送出後將無法修改。 (Make sure
                 you check your information before submitting. After submitting,
                 you won't be able to edit it.)
@@ -328,7 +328,7 @@ const Contact = () => {
       <ZStack w={"80%"} alignItems={"flex-end"}>
         <VStack>
           {show2 ? <GoArrowUpLeft size={"2rem"} /> : null}
-          {show2 ? <Text fontFamily={"cwTeXKai"}>點擊按鈕送出</Text> : null}
+          {show2 ? <Text fontFamily={""}>點擊按鈕送出</Text> : null}
         </VStack>
       </ZStack>
       {/* Footer */}

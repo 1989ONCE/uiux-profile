@@ -93,7 +93,7 @@ const ChenLayout = () => {
         <VStack>
           {parentShow ? <GoArrowUpLeft size={"2rem"} /> : null}
           {parentShow ? (
-            <Text fontFamily={"cwTeXKai"}>點擊任一選項，前往該頁面</Text>
+            <Text fontFamily={""}>點擊任一選項，前往該頁面</Text>
           ) : null}
         </VStack>
       </ZStack>

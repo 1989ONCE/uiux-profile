@@ -29,7 +29,7 @@ function NoMatch(props) {
             <Text
               color={"#3F3134"}
               paddingTop={"2rem"}
-              fontFamily={"cwTeXKai"}
+              fontFamily={""}
               fontWeight={800}
               fontSize={"2rem"}
             >

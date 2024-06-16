@@ -12,7 +12,7 @@ const ChenProject = () => {
         bottom={10}
         right={5}
         fontWeight={600}
-        fontFamily={"cwTeXKai"}
+        fontFamily={""}
         fontSize={24}
       >
         陳佳妤

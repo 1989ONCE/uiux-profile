@@ -23,10 +23,10 @@ function AvatarComponent(props) {
                 <ZStack w={'160%'} alignItems={'flex-end'}>
                     <VStack>
                         {props.show ? <GoArrowUpLeft size={'2rem'} /> : null}
-                        {props.show ? <Text fontFamily={"cwTeXKai"}>點擊任一頭像查看成員介紹,{'\n'}並使用上(左)/下(右)鍵輕鬆{'\n'}切換前後頁</Text> : null}
+                        {props.show ? <Text fontFamily={""}>點擊任一頭像查看成員介紹,{'\n'}並使用上(左)/下(右)鍵輕鬆{'\n'}切換前後頁</Text> : null}
                         </VStack>
                 </ZStack>
-                <Text color={'#3F3134'} paddingTop={'2rem'} fontFamily={"cwTeXKai"} fontWeight={600} fontSize={'2rem'}>{props.name}</Text>
+                <Text color={'#3F3134'} paddingTop={'2rem'} fontFamily={""} fontWeight={600} fontSize={'2rem'}>{props.name}</Text>
             </Pressable>   
         </Box>
     );

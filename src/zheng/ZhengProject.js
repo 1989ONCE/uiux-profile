@@ -18,7 +18,7 @@ const ZhengProject = () => {
         bottom={10}
         right={5}
         fontWeight={600}
-        fontFamily={"cwTeXKai"}
+        fontFamily={""}
         fontSize={24}
       >
         鄭彩纓

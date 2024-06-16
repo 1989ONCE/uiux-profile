@@ -73,7 +73,7 @@ root.render(
         styles={{
           popover: (base) => ({
             ...base,
-            fontFamily: "cwTeXKai",
+            fontFamily: "",
             padding: "3rem",
             lineHeight: "1.5rem",
             whiteSpace: "pre-line",

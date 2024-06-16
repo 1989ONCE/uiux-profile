@@ -14,7 +14,7 @@ const LiuInterest = () => {
         bottom={10}
         right={5}
         fontWeight={600}
-        fontFamily={"cwTeXKai"}
+        fontFamily={""}
         fontSize={24}
       >
         劉泓毅

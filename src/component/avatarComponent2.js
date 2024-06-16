@@ -16,7 +16,7 @@ function AvatarComponent2(props) {
                             source={{
                                 uri: props.img, 
                             }} />
-                        <Text color={'#3F3134'} paddingTop={'2rem'} fontFamily={"cwTeXKai"} fontWeight={800} fontSize={'2rem'}>{props.name}</Text>
+                        <Text color={'#3F3134'} paddingTop={'2rem'} fontFamily={""} fontWeight={800} fontSize={'2rem'}>{props.name}</Text>
                     </VStack>
                     {props.page === 'about' && <AboutCard skill={props.memberData.skill}  school={props.memberData.school} email={props.memberData.email} subject={props.memberData.subject} />}
                     {props.page === 'highlight' && <HighlightCard title={props.memberData.title} content={props.memberData.content} />}

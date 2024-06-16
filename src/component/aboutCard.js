@@ -21,16 +21,16 @@ function AboutCard(props) {
           <Text
             fontWeight={"600"}
             color={"#3F3134"}
-            fontSize={{ sm: "22px", xl: "26px" }}
-            fontFamily={"cwTeXKai"}
+            fontSize={{ sm: "20px", xl: "22px" }}
+            fontFamily={""}
           >
             專長
           </Text>
           <Text
             fontWeight={"400"}
             color={"#3F3134"}
-            fontSize={{ sm: "22px", xl: "26px" }}
-            fontFamily={"cwTeXKai"}
+            fontSize={{ sm: "20px", xl: "22px" }}
+            fontFamily={""}
           >
             {props.skill}
             {"\n"}
@@ -40,16 +40,16 @@ function AboutCard(props) {
           <Text
             fontWeight={"600"}
             color={"#3F3134"}
-            fontSize={{ sm: "22px", xl: "26px" }}
-            fontFamily={"cwTeXKai"}
+            fontSize={{ sm: "20px", xl: "22px" }}
+            fontFamily={""}
           >
             畢業學校
           </Text>
           <Text
             fontWeight={"400"}
             color={"#3F3134"}
-            fontSize={{ sm: "22px", xl: "26px" }}
-            fontFamily={"cwTeXKai"}
+            fontSize={{ sm: "20px", xl: "22px" }}
+            fontFamily={""}
           >
             {props.school}
             {"\n"}
@@ -59,8 +59,8 @@ function AboutCard(props) {
           <Text
             fontWeight={"600"}
             color={"#3F3134"}
-            fontSize={{ sm: "22px", xl: "26px" }}
-            fontFamily={"cwTeXKai"}
+            fontSize={{ sm: "20px", xl: "22px" }}
+            fontFamily={""}
           >
             喜歡科目
           </Text>
@@ -72,15 +72,15 @@ function AboutCard(props) {
           <Text
             fontWeight={"600"}
             color={"#3F3134"}
-            fontSize={{ sm: "22px", xl: "26px" }}
-            fontFamily={"cwTeXKai"}
+            fontSize={{ sm: "20px", xl: "22px" }}
+            fontFamily={""}
           >
             聯絡方式
           </Text>
           <Text
             fontWeight={"400"}
             color={"#3F3134"}
-            fontSize={{ sm: "22px", xl: "26px" }}
+            fontSize={{ sm: "20px", xl: "22px" }}
             fontFamily={"CormorantGaramond"}
           >
             {props.email}
