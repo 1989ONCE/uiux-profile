@@ -48,8 +48,8 @@ function SubjectCard(props) {
                 </Text>
                 <Text
                     color={'#3f3134'}
-                    fontWeight={"500"}
-                    fontSize={'20px'}
+                    fontWeight={"400"}
+                    fontSize={'18px'}
                     fontFamily={""}>
                 {props.subject.reason}
                 </Text>
