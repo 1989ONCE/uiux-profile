@@ -1,8 +1,6 @@
-import { Tooltip, Box, IconButton, HStack } from "native-base";
+import { Box, HStack, Text } from "native-base";
 import "../App.css";
 import React, { useState, useMemo, useEffect } from "react";
-import { BsInfo } from "react-icons/bs";
-import { RiCustomerService2Fill } from "react-icons/ri";
 import { Link, useLocation } from "react-router-dom";
 import routes from "../routes";
 import ProgressToast from "./ProgressToast";
@@ -74,63 +72,22 @@ function Footer(props) {
         height={"20px"}
         paddingX={2}
         position={"fixed"}
-        bottom={6}
+        bottom={2}
       >
         <HStack>
           <div className="third-step">
-            <Tooltip
-              label="使用教學"
-              bg="gray.600:alpha.30"
-              color="gray"
-              placement="top"
-            >
-              <IconButton
-                borderRadius="10rem"
-                icon={<BsInfo size={"27px"} />}
-                _icon={{
-                  color: "#3F3134",
-                  size: "md",
-                }}
-                _hover={{
-                  bg: "cyan.600:alpha.30",
-                }}
-                _pressed={{
-                  bg: "cyan.600:alpha.20",
-                }}
+              <Link _pressed={{bg: "black"}}>
+              <Text 
                 onPress={() => {
                   setShow(!show);
                   handleClick();
                 }}
-              />
-            </Tooltip>
+              >使用教學</Text></Link>
           </div>
           <div className="fourth-step">
-            <Tooltip
-              label="聯絡我們"
-              bg="gray.600:alpha.30"
-              color="gray"
-              placement="top"
-            >
-              <Link to="/contact">
-                <IconButton
-                  borderRadius="10rem"
-                  icon={<RiCustomerService2Fill size={"27px"} />}
-                  _icon={{
-                    color: "#3F3134",
-                    size: "md",
-                    borderColor: "#3F3134",
-                    borderWidth: "3px",
-                    borderStyle: "solid",
-                  }}
-                  _hover={{
-                    bg: "cyan.600:alpha.30",
-                  }}
-                  _pressed={{
-                    bg: "cyan.600:alpha.20",
-                  }}
-                />
+              <Link _pressed={{bg: "black"}}  to="/contact">
+                <Text paddingX={3}>聯絡我們</Text>
               </Link>
-            </Tooltip>
           </div>
         </HStack>
       </Box>

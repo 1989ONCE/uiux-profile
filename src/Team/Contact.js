@@ -279,7 +279,7 @@ const Contact = () => {
             ) : null}
           </FormControl>
 
-          <Button alignSelf={'flex-end'} w={'fit-content'} onPress={() => setIsOpen(!isOpen)} mt="5" bg="#cc4c24" _text={{color: 'white'}} _hover={{bg: '#b34724'}} _pressed={{bg: '#ac4220'}}>
+          <Button borderRadius={25} alignSelf={'flex-end'} w={'fit-content'} onPress={() => setIsOpen(!isOpen)} mt="5" bg="#cc4c24" _text={{color: 'white'}} _hover={{bg: '#b34724'}} _pressed={{bg: '#ac4220'}}>
             Submit
           </Button>
           <AlertDialog
@@ -300,6 +300,7 @@ const Contact = () => {
               <AlertDialog.Footer>
                 <Button.Group space={2}>
                   <Button
+                    borderRadius={25}
                     bg={'rose.700'}
                     _hover={{bg: 'rose.600'}}
                     _pressed={{bg: 'rose.600'}}
@@ -309,6 +310,7 @@ const Contact = () => {
                     Cancel
                   </Button>
                   <Button
+                    borderRadius={25}
                     bg={'green.700'}
                     _hover={{bg: 'green.600'}}
                     _pressed={{bg: 'green.600'}}
@@ -325,7 +327,7 @@ const Contact = () => {
           </AlertDialog>
         </VStack>
       </Center>
-      <ZStack w={"80%"} alignItems={"flex-end"}>
+      <ZStack w={"85%"} alignItems={"flex-end"}>
         <VStack>
           {show2 ? <GoArrowUpLeft size={"2rem"} /> : null}
           {show2 ? <Text fontFamily={""}>點擊按鈕送出</Text> : null}
