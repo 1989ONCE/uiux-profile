@@ -3,6 +3,8 @@ import '../App.css';
 import { GoArrowUpLeft } from "react-icons/go";
 import React from "react";
 import { Link } from "react-router-dom";
+import { Linking } from "react-native";
+import { GrLinkedin } from "react-icons/gr";
 
 function AvatarComponent(props) {
     return (
@@ -26,7 +28,8 @@ function AvatarComponent(props) {
                         {props.show ? <Text fontFamily={""}>點擊任一頭像查看成員介紹,{'\n'}並使用上(左)/下(右)鍵輕鬆{'\n'}切換前後頁</Text> : null}
                         </VStack>
                 </ZStack>
-                <Text color={'#3F3134'} paddingTop={'2rem'} fontFamily={""} fontWeight={600} fontSize={'2rem'}>{props.name}</Text>
+                <Box flexDirection={'row'} alignItems={'center'} justifyItems={'center'}>
+                <GrLinkedin top={5}  size={32} /><Text color={'#3F3134'} fontFamily={""} fontWeight={600} fontSize={'2rem'} onPress={() => Linking.openURL(`${props.linkedin}`)}>{props.name}</Text></Box>
             </Pressable>   
         </Box>
     );

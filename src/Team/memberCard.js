@@ -39,18 +39,21 @@ function MemberCard(props) {
           show={props.show}
           img={member1.img}
           name={member1.name}
+          linkedin={member1.linkedin}
           link="chen/about"
         ></AvatarComponent>
         <AvatarComponent
           show={false}
           img={member2.img}
           name={member2.name}
+          linkedin={member2.linkedin}
           link="liu/about"
         ></AvatarComponent>
         <AvatarComponent
           show={false}
           img={member3.img}
           name={member3.name}
+          linkedin={member3.linkedin}
           link="zheng/about"
         ></AvatarComponent>
       </Box>

@@ -8,6 +8,7 @@ const data = {
     "member": [
     {
         "name": "陳佳妤",
+        "linkedin": "https://www.linkedin.com/in/susanchen-info",
         "img": chenImg,
         "about": {
             "skill": " 深度學習 系統分析 軟體開發",
@@ -56,6 +57,7 @@ const data = {
     }, 
     {
         "name": "劉泓毅",
+        "linkedin": "https://www.linkedin.com/in/hung-yi-liu-a05b9521b/",
         "img": liuImg,
         "about": {
             "skill": " 軟體開發 網頁程式設計",
@@ -100,6 +102,7 @@ const data = {
     },
     {
         "name": "鄭彩纓",
+        "linkedin": "https://www.linkedin.com/in/susanchen-info",
         "img": zhengImg,
         "about": {
             "skill": " 數位行銷 影音傳播",
