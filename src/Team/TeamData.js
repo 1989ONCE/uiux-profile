@@ -102,7 +102,7 @@ const data = {
     },
     {
         "name": "鄭彩纓",
-        "linkedin": "https://www.linkedin.com/in/susanchen-info",
+        "linkedin": "https://www.linkedin.com/in/tsai-ying-cheng-402079245/",
         "img": zhengImg,
         "about": {
             "skill": " 數位行銷 影音傳播",
