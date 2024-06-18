@@ -21,9 +21,9 @@ const ZhengInterest = () => {
         鄭彩纓
       </Text>
       <HStack w={"80%"} h={"455px"} justifyContent={"center"}>
-        <InterestComponent img={i1} title={"電影"} />
-        <InterestComponent img={i2} title={"音樂"} />
-        <InterestComponent img={i3} title={"旅遊"} />
+        <InterestComponent img={i1} title={"電影"} context={'一起揪看腦筋急轉彎2～～'} link={'https://www.sbc-cinemas.com.tw/movie.php?n=2&id=6131'}/>
+        <InterestComponent img={i2} title={"音樂"} context={'My favorite song is "Never Be Alone" By Shawn Mendes'} link={'https://www.youtube.com/watch?v=N7VCLNBNJQs'}/>
+        <InterestComponent img={i3} title={"旅遊"} context={'Who loves travel just like me?'} link={'https://www.klook.com/zh-TW/'}/>
       </HStack>
     </>
   );
