@@ -17,8 +17,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 [Male](https://uiux-profile-git-male-susan-chens-projects-8f05839f.vercel.app/)
 [Female](https://uiux-profile-git-female-susan-chens-projects-8f05839f.vercel.app/?vercelToolbarCode=vX9T7gbWDDSZ_MI)
-[PPT Introduction](https://www.canva.com/design/DAGGf6_Pq88/Q4fFi4qJLqeORy1TTbHoow/view?utm_content=DAGGf6_Pq88&utm_campaign=designshare&utm_medium=link&utm_source=editor)
-
+[Result](https://www.canva.com/design/DAGGf6_Pq88/Q4fFi4qJLqeORy1TTbHoow/view?utm_content=DAGGf6_Pq88&utm_campaign=designshare&utm_medium=link&utm_source=editor)
+[PPT Introduction of two ver.](https://www.canva.com/design/DAGITR4g5bU/-QL1t2YEGgunA8d_ev23hw/view?utm_content=DAGITR4g5bU&utm_campaign=designshare&utm_medium=link&utm_source=editor)
 ## Available Scripts
 
 In the project directory, you can run:
