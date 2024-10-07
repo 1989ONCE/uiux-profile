@@ -10,7 +10,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 | :-----| :----: | :----: |
 | Nielsen's 10 Heuristics | [Nielsen's](https://uiux-profile-git-nielsen-h-24cc2c-susan-chens-projects-8f05839f.vercel.app/#/) | [Nielsen's PPT](https://www.canva.com/design/DAF-4RyyLCQ/T2BHL_RN5KW99sHgEyaa4A/view?utm_content=DAF-4RyyLCQ&utm_campaign=designshare&utm_medium=link&utm_source=editor) |
 | Shneiderman's Eight Golden Rules | [Shneiderman's](https://uiux-profile-git-shneiderm-210217-susan-chens-projects-8f05839f.vercel.app/#/)| [Shneiderman's PPT](https://www.canva.com/design/DAGACXVLhso/3YKxZpG85ntT2LEJ3sqQzQ/view?utm_content=DAGACXVLhso&utm_campaign=designshare&utm_medium=link&utm_source=editor)|
-| Navigation & Color | [Nav & Color](https://1989once.github.io/uiux-profile/#/) | [ Nav & Color PPT](https://1989once.github.io/uiux-profile/#/) | 
+| Navigation & Color | [Nav & Color](https://1989once.github.io/uiux-profile/#/) | [ Nav & Color PPT](https://www.canva.com/design/DAGC1e03Oqc/tx6CBUdeuAKfeNV3LqmgpQ/view?utm_content=DAGC1e03Oqc&utm_campaign=designshare&utm_medium=link&utm_source=editor) | 
 
 ### Interview and Modification
 ✨In this course, we were asked to interview at least six people, three male(ssex) and three females(sex), and analyzed the result.✨ According to the result, we had to come out with two version of websites.
